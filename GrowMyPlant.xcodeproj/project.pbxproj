@@ -17,6 +17,7 @@
 		0416EBC52772069500811973 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416EBC32772069500811973 /* SearchCollectionViewCell.swift */; };
 		0416EBC62772069500811973 /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0416EBC42772069500811973 /* SearchCollectionViewCell.xib */; };
 		0416EBC827720ABD00811973 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0416EBC727720ABD00811973 /* ImageManager.swift */; };
+		049AA37E27722A4700A35E6E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA37D27722A4700A35E6E /* DetailsViewController.swift */; };
 		680659C48504C75F91E9B6A8 /* Pods_GrowMyPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978912FE9DFF8EBC328CC7D /* Pods_GrowMyPlant.framework */; };
 		7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F42743DF6200A6B710 /* AppDelegate.swift */; };
 		7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */; };
@@ -43,6 +44,7 @@
 		0416EBC32772069500811973 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		0416EBC42772069500811973 /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		0416EBC727720ABD00811973 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		049AA37D27722A4700A35E6E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		7E2F94F12743DF6200A6B710 /* GrowMyPlant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowMyPlant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2F94F42743DF6200A6B710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		049AA37A277229FA00A35E6E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				049AA37D27722A4700A35E6E /* DetailsViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		29B8CAD98B0E7162F3D00FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 				7E2F952E274BA86100A6B710 /* Reminders */,
 				7E2F950C2744E6DB00A6B710 /* Garden */,
 				7E2F952927478A3F00A6B710 /* Search */,
+				049AA37A277229FA00A35E6E /* Details */,
 				7E2F950D2744E6E400A6B710 /* Helpers */,
 				0416EBB02771EF3500811973 /* Managers */,
 				7E2F95122744E75E00A6B710 /* Views */,
@@ -348,6 +359,7 @@
 				7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */,
 				0416EBBD2772002400811973 /* List.swift in Sources */,
 				0416EBC52772069500811973 /* SearchCollectionViewCell.swift in Sources */,
+				049AA37E27722A4700A35E6E /* DetailsViewController.swift in Sources */,
 				7E2F95152744F2A700A6B710 /* TabBarController.swift in Sources */,
 				7E2F9530274BA89800A6B710 /* RemindersViewController.swift in Sources */,
 				7E2F95092744DF8800A6B710 /* GardenViewController.swift in Sources */,

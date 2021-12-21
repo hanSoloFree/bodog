@@ -8,10 +8,12 @@ class SearchPopoverViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var gestureZone: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         getData()
         setupDismissGesture()
         
@@ -28,7 +30,7 @@ class SearchPopoverViewController: UIViewController {
     
     func setupDismissGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(tap))
-        self.view.addGestureRecognizer(tap)
+        self.gestureZone.addGestureRecognizer(tap)
     }
     
     func getData() {
@@ -68,9 +70,6 @@ extension SearchPopoverViewController: UISearchBarDelegate {
 }
 
 
-
-
-
 extension SearchPopoverViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.filteredList.count
@@ -86,8 +85,24 @@ extension SearchPopoverViewController: UICollectionViewDataSource {
     }
 }
 
+
 extension SearchPopoverViewController: UICollectionViewDelegate {
-    // didSelect ...
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let identifier = String(describing: DetailsViewController.self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let detailsViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? DetailsViewController else { return }
+        
+        detailsViewController.details = filteredList[indexPath.item]
+        
+        detailsViewController.modalPresentationStyle = .overFullScreen
+        present(detailsViewController, animated: true) {
+            UIView.animate(withDuration: 0.15) {
+                detailsViewController.view.backgroundColor = .black.withAlphaComponent(0.4)
+            }
+        }
+    }
 }
 
 
