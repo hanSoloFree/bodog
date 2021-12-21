@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Flowers
-//
-//  Created by Vsevolod Shelaiev on 16.11.2021.
-//
-
 import UIKit
 
 @main
