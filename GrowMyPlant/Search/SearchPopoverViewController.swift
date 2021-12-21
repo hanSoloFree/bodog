@@ -3,9 +3,11 @@ import UIKit
 class SearchPopoverViewController: UIViewController {
     
     var list: [List] = [List]()
+    var filteredList:[List] = [List]()
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class SearchPopoverViewController: UIViewController {
     func getData() {
         if self.list.isEmpty {
             NetworkManager.shared.requestListOfBreeds { list in
+                self.filteredList = list
                 self.list = list
                 self.collectionView.reloadData()
             }
@@ -44,16 +47,40 @@ class SearchPopoverViewController: UIViewController {
 }
 
 
+extension SearchPopoverViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredList.removeAll()
+        
+        if searchText == "" {
+            filteredList = list
+        }
+        
+        for item in list {
+            guard let name = item.name else { return }
+            if name.uppercased().contains(searchText.uppercased()) {
+                filteredList.append(item)
+            }
+        }
+        
+        self.collectionView.reloadData()
+    }
+}
+
+
+
+
+
 extension SearchPopoverViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.list.count
+        return self.filteredList.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell()}
-        let info = self.list[indexPath.item]
+        let info = self.filteredList[indexPath.item]
         cell.configure(with: info)
         return cell
     }
