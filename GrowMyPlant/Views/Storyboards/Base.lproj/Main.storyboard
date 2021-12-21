@@ -25,38 +25,6 @@
             </objects>
             <point key="canvasLocation" x="869.56521739130437" y="77.678571428571431"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="GzB-g8-4uh">
-            <objects>
-                <viewController id="dBG-5r-GKN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tFV-p0-mF2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81A-cR-7eg">
-                                <rect key="frame" x="32" y="76" width="350" height="754"/>
-                                <string key="text">"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-
-</string>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="0qS-lQ-apC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="0qS-lQ-apC" firstAttribute="trailing" secondItem="81A-cR-7eg" secondAttribute="trailing" constant="32" id="0q7-9C-iNv"/>
-                            <constraint firstItem="0qS-lQ-apC" firstAttribute="bottom" secondItem="81A-cR-7eg" secondAttribute="bottom" constant="32" id="7aD-eg-gaK"/>
-                            <constraint firstItem="81A-cR-7eg" firstAttribute="top" secondItem="0qS-lQ-apC" secondAttribute="top" constant="32" id="8ZY-cR-WwA"/>
-                            <constraint firstItem="81A-cR-7eg" firstAttribute="leading" secondItem="0qS-lQ-apC" secondAttribute="leading" constant="32" id="G3U-ve-IjG"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gUO-LQ-QxS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4574" y="338"/>
-        </scene>
         <!--Search View Controller-->
         <scene sceneID="Jed-Xi-lFr">
             <objects>
@@ -147,9 +115,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6Q-Xt-8Fa">
                                 <rect key="frame" x="0.0" y="157.5" width="414" height="704.5"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="BRz-jM-g8N">
+                                    <searchBar contentMode="redraw" placeholder="Search the dog!" translatesAutoresizingMaskIntoConstraints="NO" id="BRz-jM-g8N">
                                         <rect key="frame" x="4" y="4" width="406" height="51"/>
-                                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" systemColor="systemGray2Color"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="7Kn-mx-VEU" id="Ra8-4F-kjt"/>
@@ -171,7 +140,7 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
                                     <constraint firstItem="BRz-jM-g8N" firstAttribute="top" secondItem="o6Q-Xt-8Fa" secondAttribute="top" constant="4" id="GOz-mO-wRE"/>
                                     <constraint firstAttribute="width" secondItem="o6Q-Xt-8Fa" secondAttribute="height" multiplier="191:325" id="OVc-2t-Hdl"/>
@@ -308,8 +277,8 @@
     <resources>
         <image name="loupe" width="16" height="16"/>
         <image name="set-alarm" width="16" height="16"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
