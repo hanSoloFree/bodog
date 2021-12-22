@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DogCollectionViewCell" id="gTV-IL-0wX" customClass="DogCollectionViewCell" customModule="GrowMyPlant" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="557" height="888"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="657"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="557" height="888"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="657"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFc-8J-TFq">
-                        <rect key="frame" x="16" y="119.5" width="242.5" height="242.5"/>
+                        <rect key="frame" x="16" y="105.5" width="184.5" height="184.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-50-YJH">
-                                <rect key="frame" x="6" y="6" width="230.5" height="230.5"/>
+                                <rect key="frame" x="6" y="6" width="172.5" height="172.5"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                             </imageView>
@@ -37,80 +37,89 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog's breed:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-Ri-KCx">
-                        <rect key="frame" x="282.5" y="119.5" width="149.5" height="29"/>
+                        <rect key="frame" x="224.5" y="105.5" width="149.5" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="breed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4K-YS-lVC">
-                        <rect key="frame" x="282.5" y="156.5" width="250.5" height="23"/>
-                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                        <rect key="frame" x="224.5" y="142.5" width="165.5" height="20.5"/>
+                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdR-aG-iIv">
-                        <rect key="frame" x="282.5" y="191.5" width="52" height="29"/>
+                        <rect key="frame" x="224.5" y="175" width="52" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gender" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-qo-o4c">
-                        <rect key="frame" x="282.5" y="228.5" width="250.5" height="23"/>
-                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                        <rect key="frame" x="224.5" y="212" width="165.5" height="20.5"/>
+                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPZ-GR-UEv">
-                        <rect key="frame" x="282.5" y="263.5" width="139" height="29"/>
+                        <rect key="frame" x="224.5" y="244.5" width="103.5" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-Ds-cHD">
-                        <rect key="frame" x="453.5" y="242.5" width="71.5" height="71.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-Ds-cHD">
+                        <rect key="frame" x="348" y="236" width="46" height="46"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="gIf-Ds-cHD" secondAttribute="height" multiplier="1:1" id="EE9-lM-9rJ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog's birth date and age:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt1-Ci-mPR">
-                        <rect key="frame" x="24" y="394" width="509" height="29"/>
+                        <rect key="frame" x="24" y="297.5" width="366" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date and age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PZ-ou-ugb">
-                        <rect key="frame" x="24" y="439" width="509" height="26.5"/>
+                        <rect key="frame" x="24" y="342.5" width="366" height="26.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail information:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-zN-CZ4">
-                        <rect key="frame" x="24" y="489.5" width="509" height="29"/>
+                        <rect key="frame" x="24" y="393" width="366" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cV-GK-rSa">
-                        <rect key="frame" x="24" y="534.5" width="509" height="26.5"/>
+                        <rect key="frame" x="24" y="438" width="366" height="26.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ler-OF-c1S">
-                        <rect key="frame" x="0.0" y="16" width="557" height="55.5"/>
+                        <rect key="frame" x="0.0" y="16" width="414" height="41.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="selectdCellName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aav-i1-xFA">
-                                <rect key="frame" x="8" y="8" width="541" height="39.5"/>
+                                <rect key="frame" x="8" y="8" width="398" height="25.5"/>
                                 <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="remove" translatesAutoresizingMaskIntoConstraints="NO" id="n70-xj-zwZ">
+                                <rect key="frame" x="360.5" y="12" width="17.5" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="n70-xj-zwZ" secondAttribute="height" multiplier="1:1" id="x5b-hf-gYA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80392156862745101" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ler-OF-c1S" secondAttribute="height" multiplier="10:1" id="1jk-8e-tHM"/>
+                            <constraint firstAttribute="bottom" secondItem="n70-xj-zwZ" secondAttribute="bottom" constant="12" id="Qbl-0q-exy"/>
                             <constraint firstAttribute="bottom" secondItem="Aav-i1-xFA" secondAttribute="bottom" constant="8" id="Ufe-Qw-3OQ"/>
                             <constraint firstItem="Aav-i1-xFA" firstAttribute="leading" secondItem="ler-OF-c1S" secondAttribute="leading" constant="8" id="WYc-i5-6Fy"/>
+                            <constraint firstItem="n70-xj-zwZ" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="top" constant="12" id="X9Z-8h-kmI"/>
+                            <constraint firstAttribute="trailing" secondItem="n70-xj-zwZ" secondAttribute="trailing" constant="36" id="hpZ-rc-drb"/>
                             <constraint firstItem="Aav-i1-xFA" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="top" constant="8" id="koO-u9-6t6"/>
                             <constraint firstAttribute="trailing" secondItem="Aav-i1-xFA" secondAttribute="trailing" constant="8" id="pyP-Ju-Y88"/>
                         </constraints>
@@ -120,7 +129,8 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="LgB-Ri-KCx" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="bottom" constant="48" id="1II-EC-GXs"/>
-                <constraint firstAttribute="trailing" secondItem="gIf-Ds-cHD" secondAttribute="trailing" constant="32" id="8oY-WU-iMt"/>
+                <constraint firstItem="Jt1-Ci-mPR" firstAttribute="top" secondItem="qPZ-GR-UEv" secondAttribute="bottom" constant="24" id="1l4-EW-AP5"/>
+                <constraint firstAttribute="trailing" secondItem="gIf-Ds-cHD" secondAttribute="trailing" constant="20" id="8oY-WU-iMt"/>
                 <constraint firstItem="qPZ-GR-UEv" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="ADP-f4-UJ9"/>
                 <constraint firstAttribute="trailing" secondItem="H4K-YS-lVC" secondAttribute="trailing" constant="24" id="BGl-3L-bC4"/>
                 <constraint firstItem="NFc-8J-TFq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="DKk-8E-yax"/>
@@ -132,14 +142,13 @@
                 <constraint firstItem="Pcx-qo-o4c" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="WKm-Xe-c2S"/>
                 <constraint firstAttribute="trailing" secondItem="Jt1-Ci-mPR" secondAttribute="trailing" constant="24" id="XOx-iz-t01"/>
                 <constraint firstItem="ler-OF-c1S" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="a7n-mg-1Az"/>
-                <constraint firstItem="H4K-YS-lVC" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.45" id="aro-A2-fs6"/>
-                <constraint firstItem="gIf-Ds-cHD" firstAttribute="leading" secondItem="qPZ-GR-UEv" secondAttribute="trailing" constant="32" id="dPo-Iz-Rwf"/>
+                <constraint firstItem="H4K-YS-lVC" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="aro-A2-fs6"/>
+                <constraint firstItem="gIf-Ds-cHD" firstAttribute="leading" secondItem="qPZ-GR-UEv" secondAttribute="trailing" constant="20" id="dPo-Iz-Rwf"/>
                 <constraint firstItem="LgB-Ri-KCx" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="fP5-jM-SPc"/>
                 <constraint firstItem="DdR-aG-iIv" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="fQh-KG-eOf"/>
                 <constraint firstItem="5PZ-ou-ugb" firstAttribute="top" secondItem="Jt1-Ci-mPR" secondAttribute="bottom" constant="16" id="fRu-gg-8E0"/>
                 <constraint firstItem="eDi-zN-CZ4" firstAttribute="top" secondItem="5PZ-ou-ugb" secondAttribute="bottom" constant="24" id="gCW-LI-LQd"/>
                 <constraint firstAttribute="trailing" secondItem="0cV-GK-rSa" secondAttribute="trailing" constant="24" id="gJ3-jr-mGh"/>
-                <constraint firstItem="Jt1-Ci-mPR" firstAttribute="top" secondItem="NFc-8J-TFq" secondAttribute="bottom" constant="32" id="i6l-Dd-d3K"/>
                 <constraint firstItem="gIf-Ds-cHD" firstAttribute="centerY" secondItem="qPZ-GR-UEv" secondAttribute="centerY" id="kEz-k9-VN4"/>
                 <constraint firstAttribute="trailing" secondItem="ler-OF-c1S" secondAttribute="trailing" id="lqQ-Hc-xUf"/>
                 <constraint firstItem="Pcx-qo-o4c" firstAttribute="top" secondItem="DdR-aG-iIv" secondAttribute="bottom" constant="8" id="pPh-SE-jV6"/>
@@ -155,7 +164,7 @@
                 <constraint firstItem="H4K-YS-lVC" firstAttribute="top" secondItem="LgB-Ri-KCx" secondAttribute="bottom" constant="8" id="vo6-0H-4h6"/>
                 <constraint firstItem="Jt1-Ci-mPR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="zg5-iG-Z9i"/>
             </constraints>
-            <size key="customSize" width="557" height="888"/>
+            <size key="customSize" width="424" height="888"/>
             <connections>
                 <outlet property="bioLabel" destination="0cV-GK-rSa" id="3LK-Kg-jCL"/>
                 <outlet property="birthDateAndAgeLabel" destination="5PZ-ou-ugb" id="hle-M6-TE2"/>
@@ -163,15 +172,17 @@
                 <outlet property="genderLabel" destination="Pcx-qo-o4c" id="irQ-qY-Pa4"/>
                 <outlet property="imageContainerView" destination="NFc-8J-TFq" id="Ail-w1-7fl"/>
                 <outlet property="imageView" destination="CCJ-50-YJH" id="ypj-gN-sL7"/>
+                <outlet property="removeImageView" destination="n70-xj-zwZ" id="HII-O4-HgN"/>
                 <outlet property="selectdCellNameLabel" destination="Aav-i1-xFA" id="ynp-wD-eXN"/>
                 <outlet property="selectedCellNameContainerView" destination="ler-OF-c1S" id="I2l-vg-mt4"/>
                 <outlet property="statusImageView" destination="gIf-Ds-cHD" id="Csg-gH-cnt"/>
             </connections>
-            <point key="canvasLocation" x="444.20289855072468" y="107.14285714285714"/>
+            <point key="canvasLocation" x="347.82608695652175" y="107.14285714285714"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="camera" width="512" height="512"/>
+        <image name="remove" width="225" height="225"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -2,6 +2,9 @@ import UIKit
 
 class DogCollectionViewCell: UICollectionViewCell {
     
+    var removeDelegate: RemoveCellDelegate?
+    var object: SavedDog?
+    
     var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
@@ -10,6 +13,7 @@ class DogCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var selectdCellNameLabel: UILabel!
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var removeImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var statusImageView: UIImageView!
@@ -19,12 +23,18 @@ class DogCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setCornerRadiuses()
+        setupGesture()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         setCornerRadiuses()
+    }
+    
+    func setupGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(remove))
+        removeImageView.isUserInteractionEnabled = true
+        removeImageView.addGestureRecognizer(tap)
     }
     
     func setCornerRadiuses() {
@@ -33,7 +43,9 @@ class DogCollectionViewCell: UICollectionViewCell {
     }
     
 
-    func configure(with info: SavedDog) {
+    func configure() {
+        guard let info = object else { return }
+
         self.selectdCellNameLabel.text = info.name
         
         let imagePath = info.imagePath
@@ -85,5 +97,11 @@ class DogCollectionViewCell: UICollectionViewCell {
             print("Error loading image : \(error)")
             return nil
         }
+    }
+    
+    @objc func remove() {
+        guard let object = object else { return }
+        DataManager.shared.deleteSelected(object: object)
+        removeDelegate?.reloadData()
     }
 }

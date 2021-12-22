@@ -17,8 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-Sx-Och">
+                                <rect key="frame" x="105.5" y="434" width="203" height="28"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-o2-qYl">
+                                        <rect key="frame" x="0.0" y="5" width="96.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJi-LI-DyP">
+                                        <rect key="frame" x="106.5" y="0.0" width="96.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
+                                        <color key="textColor" red="0.80392156862745101" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dogs" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-kW-fOw">
+                                <rect key="frame" x="260.5" y="439" width="48.5" height="23"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find them in the list!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNw-5I-fkC">
+                                <rect key="frame" x="68.5" y="470" width="277" height="32.5"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wVk-N6-EEf">
-                                <rect key="frame" x="0.0" y="164" width="414" height="641"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="657"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.80392156859999997" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="efA-7S-DGJ">
@@ -37,15 +67,24 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="wVk-N6-EEf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="0Gu-yL-bwI"/>
+                            <constraint firstItem="wVk-N6-EEf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="0Gu-yL-bwI"/>
+                            <constraint firstItem="2Uh-Sx-Och" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7rd-Zf-DGM"/>
                             <constraint firstItem="wVk-N6-EEf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JG0-N7-qyu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wVk-N6-EEf" secondAttribute="bottom" constant="8" id="JVt-DK-1Z4"/>
+                            <constraint firstItem="HNw-5I-fkC" firstAttribute="top" secondItem="2Uh-Sx-Och" secondAttribute="bottom" constant="8" id="Olf-Lm-kth"/>
+                            <constraint firstItem="bTF-kW-fOw" firstAttribute="leading" secondItem="iJi-LI-DyP" secondAttribute="trailing" constant="-48" id="bVU-Ml-6ft"/>
+                            <constraint firstItem="2Uh-Sx-Och" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bx3-GU-2KC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wVk-N6-EEf" secondAttribute="trailing" id="ofP-F1-LWr"/>
+                            <constraint firstItem="HNw-5I-fkC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qOh-JU-ASt"/>
+                            <constraint firstItem="bTF-kW-fOw" firstAttribute="centerY" secondItem="KGE-o2-qYl" secondAttribute="centerY" id="yuj-oM-NdV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Gkz-xn-UWu"/>
                     <connections>
                         <outlet property="collectionView" destination="wVk-N6-EEf" id="Ott-QE-VxS"/>
+                        <outlet property="dogsLabel" destination="bTF-kW-fOw" id="i6I-I3-Ynm"/>
+                        <outlet property="findThemLabel" destination="HNw-5I-fkC" id="9t8-Qs-ZyF"/>
+                        <outlet property="stackView" destination="2Uh-Sx-Och" id="5gX-zM-O9S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,25 +115,25 @@
                                     <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="CXi-p7-JCq"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-ii-6VD">
-                                <rect key="frame" x="50" y="386.5" width="258" height="28"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-ii-6VD">
+                                <rect key="frame" x="50" y="386.5" width="251" height="28"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your'r" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-Wk-PoT">
-                                        <rect key="frame" x="0.0" y="0.0" width="128.5" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find you'r" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-Wk-PoT">
+                                        <rect key="frame" x="0.0" y="5" width="120.5" height="23"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BELOVED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sS7-Ow-TTg">
-                                        <rect key="frame" x="129.5" y="0.0" width="128.5" height="28"/>
+                                        <rect key="frame" x="130.5" y="0.0" width="120.5" height="28"/>
                                         <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-fL-zQL">
-                                <rect key="frame" x="316" y="389" width="36.5" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dog" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-fL-zQL">
+                                <rect key="frame" x="309" y="391.5" width="36.5" height="23"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -109,16 +148,15 @@
                         <viewLayoutGuide key="safeArea" id="Uj8-YP-lFV"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Uj8-YP-lFV" firstAttribute="trailing" secondItem="ete-fL-zQL" secondAttribute="trailing" constant="61.5" id="15n-j2-7hp"/>
                             <constraint firstItem="4YT-sL-rwG" firstAttribute="centerY" secondItem="W46-XB-IYr" secondAttribute="centerY" id="A1h-Mk-ldA"/>
                             <constraint firstItem="1Pm-vv-2Ht" firstAttribute="top" secondItem="4YT-sL-rwG" secondAttribute="bottom" constant="8" id="BD4-FG-eem"/>
                             <constraint firstItem="Uj8-YP-lFV" firstAttribute="trailing" secondItem="1Pm-vv-2Ht" secondAttribute="trailing" constant="80" id="E1h-rF-cvW"/>
-                            <constraint firstItem="ete-fL-zQL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yR1-ii-6VD" secondAttribute="trailing" constant="8" symbolic="YES" id="HnA-2n-sn8"/>
                             <constraint firstItem="yR1-ii-6VD" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="50" id="OdO-us-DNc"/>
                             <constraint firstItem="Uj8-YP-lFV" firstAttribute="trailing" secondItem="4YT-sL-rwG" secondAttribute="trailing" constant="80" id="Twt-2E-d15"/>
                             <constraint firstItem="4YT-sL-rwG" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="80" id="Y9O-Zr-jTQ"/>
                             <constraint firstItem="1Pm-vv-2Ht" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="80" id="Yqc-u9-NTD"/>
                             <constraint firstItem="4YT-sL-rwG" firstAttribute="top" secondItem="yR1-ii-6VD" secondAttribute="bottom" constant="8" id="cRU-oH-1wA"/>
+                            <constraint firstItem="ete-fL-zQL" firstAttribute="leading" secondItem="sS7-Ow-TTg" secondAttribute="trailing" constant="8" id="loX-D2-nOR"/>
                             <constraint firstItem="ete-fL-zQL" firstAttribute="centerY" secondItem="1hk-Wk-PoT" secondAttribute="centerY" id="tOD-Uv-y3z"/>
                         </constraints>
                     </view>

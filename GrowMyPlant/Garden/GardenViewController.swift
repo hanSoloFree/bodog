@@ -1,18 +1,22 @@
 import UIKit
 
-class GardenViewController: UIViewController, UITabBarDelegate {
+class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDelegate {
     
     var dogs: [SavedDog]?
-    
+        
     var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var dogsLabel: UILabel!
+    @IBOutlet weak var findThemLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupCollectionView()
         loadData()
         setupNavBar()
@@ -34,6 +38,16 @@ class GardenViewController: UIViewController, UITabBarDelegate {
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
     
+    func reloadData() {
+        self.dogs = DataManager.shared.get()
+        collectionView.reloadData()
+    }
+    
+    func placeholder(hide: Bool) {
+        self.stackView.isHidden = hide
+        self.dogsLabel.isHidden = hide
+        self.findThemLabel.isHidden = hide
+    }
     
     private func setupNavBar() {
         navigationItem.title = "My Dogs"
@@ -58,6 +72,11 @@ class GardenViewController: UIViewController, UITabBarDelegate {
 extension GardenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = dogs?.count else { return 0 }
+        if count > 0 {
+            placeholder(hide: true)
+        } else {
+           placeholder(hide: false)
+        }
         return count
     }
     
@@ -66,9 +85,11 @@ extension GardenViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? DogCollectionViewCell else { return UICollectionViewCell() }
         
         guard let dogs = self.dogs else { return UICollectionViewCell() }
-        let info = dogs[indexPath.item]
+        let object = dogs[indexPath.item]
         
-        cell.configure(with: info)
+        cell.object = object
+        cell.removeDelegate = self
+        cell.configure()
         
         return cell
     }
