@@ -2,12 +2,19 @@ import UIKit
 
 class GardenViewController: UIViewController, UITabBarDelegate {
     
+    var dogs = [0]
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         extendedLayoutIncludesOpaqueBars = true
         view.backgroundColor = .systemGray2
         setupNavBar()
         self.navigationController?.navigationBar.setNeedsLayout()
+        let cellName = String(describing: DogCollectionViewCell.self)
+        let cellNib = UINib(nibName: cellName, bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
     
     
@@ -27,4 +34,22 @@ class GardenViewController: UIViewController, UITabBarDelegate {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
+}
+
+
+extension GardenViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dogs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = String(describing: DogCollectionViewCell.self)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? DogCollectionViewCell else { return UICollectionViewCell() }
+        
+        
+        
+        return cell
+    }
+    
+    
 }

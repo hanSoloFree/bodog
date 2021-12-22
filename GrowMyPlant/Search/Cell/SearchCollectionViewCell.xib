@@ -18,46 +18,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="258"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z6j-rm-Ism">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="210"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="z6j-rm-Ism" secondAttribute="height" multiplier="10:7" id="rc5-2T-rxs"/>
-                        </constraints>
-                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyK-Uk-2KG">
-                        <rect key="frame" x="0.0" y="210" width="300" height="48"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="258"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiM-Dq-m9U">
-                                <rect key="frame" x="8" y="8" width="284" height="32"/>
-                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                <rect key="frame" x="8" y="213.5" width="284" height="44.5"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xj1-rU-hwN">
+                                <rect key="frame" x="4" y="4" width="292" height="209.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xj1-rU-hwN" secondAttribute="height" multiplier="3:2.15" id="xKj-Rh-GWo"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
-                            <constraint firstItem="wiM-Dq-m9U" firstAttribute="top" secondItem="WyK-Uk-2KG" secondAttribute="top" constant="8" id="2vx-Bh-daD"/>
-                            <constraint firstItem="wiM-Dq-m9U" firstAttribute="leading" secondItem="WyK-Uk-2KG" secondAttribute="leading" constant="8" id="C3o-Fn-Mfy"/>
-                            <constraint firstAttribute="bottom" secondItem="wiM-Dq-m9U" secondAttribute="bottom" constant="8" id="Z6V-hc-uJU"/>
-                            <constraint firstAttribute="trailing" secondItem="wiM-Dq-m9U" secondAttribute="trailing" constant="8" id="w7M-gd-GKH"/>
+                            <constraint firstItem="wiM-Dq-m9U" firstAttribute="leading" secondItem="WyK-Uk-2KG" secondAttribute="leading" constant="8" id="2yi-1n-HE4"/>
+                            <constraint firstItem="Xj1-rU-hwN" firstAttribute="leading" secondItem="WyK-Uk-2KG" secondAttribute="leading" constant="4" id="BVv-Za-eJg"/>
+                            <constraint firstAttribute="trailing" secondItem="Xj1-rU-hwN" secondAttribute="trailing" constant="4" id="Nlj-C1-0sd"/>
+                            <constraint firstItem="wiM-Dq-m9U" firstAttribute="top" secondItem="Xj1-rU-hwN" secondAttribute="bottom" id="Pa9-N2-GYx"/>
+                            <constraint firstItem="Xj1-rU-hwN" firstAttribute="top" secondItem="WyK-Uk-2KG" secondAttribute="top" constant="4" id="TKr-Jf-Qch"/>
+                            <constraint firstAttribute="bottom" secondItem="wiM-Dq-m9U" secondAttribute="bottom" id="lWo-HG-LKB"/>
+                            <constraint firstAttribute="trailing" secondItem="wiM-Dq-m9U" secondAttribute="trailing" constant="8" id="o85-zb-h1h"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="WyK-Uk-2KG" secondAttribute="bottom" id="8jB-YF-HgI"/>
-                <constraint firstItem="WyK-Uk-2KG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rsb-Mp-dKh"/>
-                <constraint firstItem="z6j-rm-Ism" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Uxq-NK-L6a"/>
-                <constraint firstAttribute="trailing" secondItem="z6j-rm-Ism" secondAttribute="trailing" id="ZRV-5K-AdI"/>
-                <constraint firstItem="z6j-rm-Ism" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qYJ-kg-P01"/>
-                <constraint firstItem="WyK-Uk-2KG" firstAttribute="top" secondItem="z6j-rm-Ism" secondAttribute="bottom" id="rFg-Cc-Bv7"/>
-                <constraint firstAttribute="trailing" secondItem="WyK-Uk-2KG" secondAttribute="trailing" id="xGY-yO-9C0"/>
+                <constraint firstAttribute="bottom" secondItem="WyK-Uk-2KG" secondAttribute="bottom" id="XyE-ke-Zfl"/>
+                <constraint firstAttribute="trailing" secondItem="WyK-Uk-2KG" secondAttribute="trailing" id="hA5-P6-2dI"/>
+                <constraint firstItem="WyK-Uk-2KG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="je6-M6-cdG"/>
+                <constraint firstItem="WyK-Uk-2KG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sJR-im-Zhx"/>
             </constraints>
             <size key="customSize" width="300" height="258"/>
             <connections>
                 <outlet property="breedLabel" destination="wiM-Dq-m9U" id="4OJ-bw-oMK"/>
-                <outlet property="dogImageView" destination="z6j-rm-Ism" id="9av-zY-g7k"/>
+                <outlet property="dogImageView" destination="Xj1-rU-hwN" id="s9f-ph-pmT"/>
             </connections>
             <point key="canvasLocation" x="317.39130434782612" y="149.33035714285714"/>
         </collectionViewCell>

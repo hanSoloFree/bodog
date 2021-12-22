@@ -26,48 +26,57 @@ class DetailsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.addButton.layer.cornerRadius = 15
         self.containerView.layer.cornerRadius = 15
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        self.view.backgroundColor = .black.withAlphaComponent(0.5)
+        self.dogImageView.layer.cornerRadius = 10
     }
     
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        //
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let identifier = String(describing: AdditionViewController.self)
+        guard let additionViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? AdditionViewController else { return }
+        additionViewController.modalPresentationStyle = .overFullScreen
+        additionViewController.defaultImage = dogImageView.image
+        additionViewController.defaultBreed = breedLabel.text
+        
+        present(additionViewController, animated: true) {
+            UIView.animate(withDuration: 0.15) {
+                additionViewController.view.backgroundColor = .black.withAlphaComponent(0.4)
+            }
+        }
     }
     
     func setupDetails() {
-        if let dogImageURL  = details?.image?.url {
+        guard let details = details else { return }
+
+        if let dogImageURL  = details.image?.url {
             ImageManager.shared.setImage(for: dogImageView, url: dogImageURL)
         }
     
-        if let lifeSpan = details?.life_span {
+        if let lifeSpan = details.lifeSpan {
             lifeSpanLabel.text = lifeSpan
         }
         
-        if let height = details?.height?.metric {
+        if let height = details.height?.metric {
             heightLabel.text = height + "cm"
         }
         
-        if let weight = details?.weight?.metric {
+        if let weight = details.weight?.metric {
             weightLabel.text = weight + "kg"
         }
         
-        if let breed  = details?.name {
+        if let breed  = details.name {
             breedLabel.text = breed
         }
         
-        if let temperament = details?.temperament {
+        if let temperament = details.temperament {
             temperamentLabel.text = temperament
         }
         
-        if let bredFor = details?.bred_for {
+        if let bredFor = details.bredFor {
             bredForLabel.text = bredFor
         }
         
-        if let breedGroup = details?.breed_group {
+        if let breedGroup = details.breedGroup {
             breedGroupLabel.text = breedGroup
         }
     }

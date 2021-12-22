@@ -8,6 +8,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = 10
+        self.dogImageView.layer.cornerRadius = 10
     }
     
     func configure(with info: List) {
