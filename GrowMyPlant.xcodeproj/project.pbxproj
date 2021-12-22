@@ -24,6 +24,12 @@
 		049CFD032773527C00768DFE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD022773527C00768DFE /* DataManager.swift */; };
 		049CFD062773548000768DFE /* SavedDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD052773548000768DFE /* SavedDog.swift */; };
 		049CFD0927738EA000768DFE /* RemoveCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD0827738EA000768DFE /* RemoveCellDelegate.swift */; };
+		049CFD0C27739BF600768DFE /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049CFD0B27739BF600768DFE /* Alert.storyboard */; };
+		049CFD0E27739C0700768DFE /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD0D27739C0700768DFE /* AlertViewController.swift */; };
+		049CFD1027739CBD00768DFE /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD0F27739CBD00768DFE /* AlertService.swift */; };
+		049CFD122773A3EC00768DFE /* RemoveAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD112773A3EC00768DFE /* RemoveAlertViewController.swift */; };
+		049CFD142773B5F600768DFE /* AddiitonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD132773B5F600768DFE /* AddiitonDelegate.swift */; };
+		049CFD162773BCB300768DFE /* SavingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD152773BCB300768DFE /* SavingDelegate.swift */; };
 		680659C48504C75F91E9B6A8 /* Pods_GrowMyPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978912FE9DFF8EBC328CC7D /* Pods_GrowMyPlant.framework */; };
 		7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F42743DF6200A6B710 /* AppDelegate.swift */; };
 		7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */; };
@@ -57,6 +63,12 @@
 		049CFD022773527C00768DFE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		049CFD052773548000768DFE /* SavedDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDog.swift; sourceTree = "<group>"; };
 		049CFD0827738EA000768DFE /* RemoveCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCellDelegate.swift; sourceTree = "<group>"; };
+		049CFD0B27739BF600768DFE /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		049CFD0D27739C0700768DFE /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		049CFD0F27739CBD00768DFE /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		049CFD112773A3EC00768DFE /* RemoveAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAlertViewController.swift; sourceTree = "<group>"; };
+		049CFD132773B5F600768DFE /* AddiitonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddiitonDelegate.swift; sourceTree = "<group>"; };
+		049CFD152773BCB300768DFE /* SavingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F12743DF6200A6B710 /* GrowMyPlant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowMyPlant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2F94F42743DF6200A6B710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -155,8 +167,21 @@
 			isa = PBXGroup;
 			children = (
 				049CFD0827738EA000768DFE /* RemoveCellDelegate.swift */,
+				049CFD132773B5F600768DFE /* AddiitonDelegate.swift */,
+				049CFD152773BCB300768DFE /* SavingDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		049CFD0A27739BD900768DFE /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				049CFD0D27739C0700768DFE /* AlertViewController.swift */,
+				049CFD112773A3EC00768DFE /* RemoveAlertViewController.swift */,
+				049CFD0F27739CBD00768DFE /* AlertService.swift */,
+				049CFD0B27739BF600768DFE /* Alert.storyboard */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		29B8CAD98B0E7162F3D00FEA /* Frameworks */ = {
@@ -197,6 +222,7 @@
 		7E2F94F32743DF6200A6B710 /* GrowMyPlant */ = {
 			isa = PBXGroup;
 			children = (
+				049CFD0A27739BD900768DFE /* Alerts */,
 				049CFD0727738E8F00768DFE /* Delegates */,
 				049CFD042773546600768DFE /* RealmModel */,
 				046D3C5927727551004C7A91 /* JSONModels */,
@@ -345,6 +371,7 @@
 				049CFCFE277322D000768DFE /* DogCollectionViewCell.xib in Resources */,
 				0416EBC62772069500811973 /* SearchCollectionViewCell.xib in Resources */,
 				7E2F94FC2743DF6200A6B710 /* Main.storyboard in Resources */,
+				049CFD0C27739BF600768DFE /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,17 +436,22 @@
 				7E2F95172744FC7E00A6B710 /* CustomTabBarView.swift in Sources */,
 				046D3C69277275E3004C7A91 /* Weight.swift in Sources */,
 				7E2F950F2744E70700A6B710 /* CustomColors.swift in Sources */,
+				049CFD142773B5F600768DFE /* AddiitonDelegate.swift in Sources */,
 				7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */,
 				049CFD012773380C00768DFE /* AdditionViewController.swift in Sources */,
+				049CFD1027739CBD00768DFE /* AlertService.swift in Sources */,
 				0416EBAB2771DAF300811973 /* ExtensionUIView.swift in Sources */,
 				7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */,
 				0416EBC52772069500811973 /* SearchCollectionViewCell.swift in Sources */,
 				049AA37E27722A4700A35E6E /* DetailsViewController.swift in Sources */,
 				7E2F95152744F2A700A6B710 /* TabBarController.swift in Sources */,
+				049CFD162773BCB300768DFE /* SavingDelegate.swift in Sources */,
 				7E2F9530274BA89800A6B710 /* RemindersViewController.swift in Sources */,
 				049CFD0927738EA000768DFE /* RemoveCellDelegate.swift in Sources */,
 				049CFD032773527C00768DFE /* DataManager.swift in Sources */,
+				049CFD122773A3EC00768DFE /* RemoveAlertViewController.swift in Sources */,
 				7E2F95092744DF8800A6B710 /* GardenViewController.swift in Sources */,
+				049CFD0E27739C0700768DFE /* AlertViewController.swift in Sources */,
 				7E2F950B2744E44B00A6B710 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

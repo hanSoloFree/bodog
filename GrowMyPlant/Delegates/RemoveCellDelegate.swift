@@ -1,3 +1,3 @@
 protocol RemoveCellDelegate {
-    func reloadData()
+    func reloadData(completion: @escaping(() -> Void))
 }

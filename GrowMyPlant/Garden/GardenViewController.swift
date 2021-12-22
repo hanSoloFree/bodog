@@ -38,9 +38,18 @@ class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDe
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
     
-    func reloadData() {
-        self.dogs = DataManager.shared.get()
-        collectionView.reloadData()
+    func reloadData(completion: @escaping(() -> Void)) {
+        let alert = AlertService.shared.removeAlert("You sure you want to remove this pretty dog? :(") {
+            completion()
+            self.dogs = DataManager.shared.get()
+            self.collectionView.reloadData()
+        }
+        alert.modalPresentationStyle = .overFullScreen
+        present(alert, animated: true) {
+            UIView.animate(withDuration: 0.1) {
+                alert.view.backgroundColor = .black.withAlphaComponent(0.5)
+            }
+        }
     }
     
     func placeholder(hide: Bool) {

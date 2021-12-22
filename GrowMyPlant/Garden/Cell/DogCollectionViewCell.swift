@@ -101,7 +101,8 @@ class DogCollectionViewCell: UICollectionViewCell {
     
     @objc func remove() {
         guard let object = object else { return }
-        DataManager.shared.deleteSelected(object: object)
-        removeDelegate?.reloadData()
+        removeDelegate?.reloadData(completion: {
+            DataManager.shared.deleteSelected(object: object)
+        })
     }
 }

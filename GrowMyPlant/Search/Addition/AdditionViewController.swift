@@ -60,10 +60,13 @@ class AdditionViewController: UIViewController {
             object.spayed = self.spayedSwitch.isOn
             
             if DataManager.shared.save(object: object) {
-                print("saved")
-                self.dismiss(animated: true, completion: nil)
+                let alert = AlertService.shared.alert("Saved!")
+                alert.savingDelegate = self
+                self.present(alert, animated: true)
             } else {
-                print("you already have this dog")
+                let alert = AlertService.shared.alert("You have already saved this dog!\nCheck for information you've typed!")
+                self.present(alert, animated: true)
+                
             }
             
         }
@@ -89,7 +92,8 @@ class AdditionViewController: UIViewController {
         
         self.newImageSet = false
         
-        DataManager.shared.deleteAll()
+        let alert = AlertService.shared.alert("Cleaned")
+        present(alert, animated: true)
     }
         
     private func save(image: UIImage, fileName: String) -> String? {
@@ -185,4 +189,13 @@ extension AdditionViewController: PHPickerViewControllerDelegate {
         }
         
     }
+}
+
+extension AdditionViewController: SavingDelegate {
+    func dismiss() {
+        self.view.backgroundColor = .black.withAlphaComponent(0)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

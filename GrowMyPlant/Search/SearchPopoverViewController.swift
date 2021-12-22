@@ -96,10 +96,12 @@ extension SearchPopoverViewController: UICollectionViewDelegate {
         
         detailsViewController.details = filteredList[indexPath.item]
         
+        detailsViewController.additionDelegate = self
+        
         detailsViewController.modalPresentationStyle = .overFullScreen
         present(detailsViewController, animated: true) {
             UIView.animate(withDuration: 0.15) {
-                detailsViewController.view.backgroundColor = .black.withAlphaComponent(0.4)
+                detailsViewController.view.backgroundColor = .black.withAlphaComponent(0.6)
             }
         }
     }
@@ -120,4 +122,14 @@ extension SearchPopoverViewController: UICollectionViewDelegateFlowLayout {
         
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
+}
+
+extension SearchPopoverViewController: AdditionDelegate {
+    func present(additionViewController: AdditionViewController) {
+        present(additionViewController, animated: true) {
+            UIView.animate(withDuration: 0.15) {
+                additionViewController.view.backgroundColor = .black.withAlphaComponent(0.6)
+            }
+        }
+    } 
 }

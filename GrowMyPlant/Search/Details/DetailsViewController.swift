@@ -3,6 +3,7 @@ import UIKit
 class DetailsViewController: UIViewController {
     
     var details: List?
+    var additionDelegate: AdditionDelegate?
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dogImageView: UIImageView!
@@ -38,10 +39,8 @@ class DetailsViewController: UIViewController {
         additionViewController.defaultImage = dogImageView.image
         additionViewController.defaultBreed = breedLabel.text
         
-        present(additionViewController, animated: true) {
-            UIView.animate(withDuration: 0.15) {
-                additionViewController.view.backgroundColor = .black.withAlphaComponent(0.4)
-            }
+        self.dismiss(animated: true) {
+            self.additionDelegate?.present(additionViewController: additionViewController)
         }
     }
     
