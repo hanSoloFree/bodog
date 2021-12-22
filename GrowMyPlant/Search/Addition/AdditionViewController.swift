@@ -91,22 +91,19 @@ class AdditionViewController: UIViewController {
         
         DataManager.shared.deleteAll()
     }
-    
-    // MARK: IMAGE SAVE
-    
+        
     private func save(image: UIImage, fileName: String) -> String? {
         let fileName = fileName
         let fileURL = documentsUrl.appendingPathComponent(fileName)
         if let imageData = image.jpegData(compressionQuality: 1.0) {
-           try? imageData.write(to: fileURL, options: .atomic)
-           return fileName // ----> Save fileName
+            try? imageData.write(to: fileURL, options: .atomic)
+            return fileName
+        } else {
+            print("Error saving image")
+            return nil
         }
-        print("Error saving image")
-        return nil
     }
-    
-    //MARK: IMAGE SAVE
-    
+
     
     
     func setupDefaults() {

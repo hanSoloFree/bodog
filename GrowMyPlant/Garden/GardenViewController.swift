@@ -2,7 +2,7 @@ import UIKit
 
 class GardenViewController: UIViewController, UITabBarDelegate {
     
-    var dogs: [SavedDog]!
+    var dogs: [SavedDog]?
     
     var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -13,20 +13,25 @@ class GardenViewController: UIViewController, UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dogs = DataManager.shared.get()
-
-        extendedLayoutIncludesOpaqueBars = true
-        view.backgroundColor = .systemGray2
+        setupCollectionView()
+        loadData()
         setupNavBar()
-        self.navigationController?.navigationBar.setNeedsLayout()
-        let cellName = String(describing: DogCollectionViewCell.self)
-        let cellNib = UINib(nibName: cellName, bundle: nil)
-        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loadData()
+    }
+    
+    func loadData() {
         self.dogs = DataManager.shared.get()
+        self.collectionView.reloadData()
+    }
+    
+    func setupCollectionView() {
+        let cellName = String(describing: DogCollectionViewCell.self)
+        let cellNib = UINib(nibName: cellName, bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
     
     
@@ -45,33 +50,25 @@ class GardenViewController: UIViewController, UITabBarDelegate {
         navBarAppearance.backgroundColor = CustomColors.darkGray
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        self.navigationController?.navigationBar.setNeedsLayout()
     }
-    
-    //MARK: IMAGE
-    private func load(fileName: String) -> UIImage? {
-        let fileURL = documentsUrl.appendingPathComponent(fileName)
-        do {
-            let imageData = try Data(contentsOf: fileURL)
-            return UIImage(data: imageData)
-        } catch {
-            print("Error loading image : \(error)")
-        }
-        return nil
-    }
-    //MARK: IMAGE
-
 }
 
 
 extension GardenViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dogs.count
+        guard let count = dogs?.count else { return 0 }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = String(describing: DogCollectionViewCell.self)
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? DogCollectionViewCell else { return UICollectionViewCell() }
         
+        guard let dogs = self.dogs else { return UICollectionViewCell() }
+        let info = dogs[indexPath.item]
+        
+        cell.configure(with: info)
         
         return cell
     }
