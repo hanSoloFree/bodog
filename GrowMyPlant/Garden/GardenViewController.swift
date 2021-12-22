@@ -2,12 +2,19 @@ import UIKit
 
 class GardenViewController: UIViewController, UITabBarDelegate {
     
-    var dogs = [0]
+    var dogs: [SavedDog]!
+    
+    var documentsUrl: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.dogs = DataManager.shared.get()
+
         extendedLayoutIncludesOpaqueBars = true
         view.backgroundColor = .systemGray2
         setupNavBar()
@@ -15,6 +22,11 @@ class GardenViewController: UIViewController, UITabBarDelegate {
         let cellName = String(describing: DogCollectionViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.dogs = DataManager.shared.get()
     }
     
     
@@ -34,6 +46,20 @@ class GardenViewController: UIViewController, UITabBarDelegate {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
     }
+    
+    //MARK: IMAGE
+    private func load(fileName: String) -> UIImage? {
+        let fileURL = documentsUrl.appendingPathComponent(fileName)
+        do {
+            let imageData = try Data(contentsOf: fileURL)
+            return UIImage(data: imageData)
+        } catch {
+            print("Error loading image : \(error)")
+        }
+        return nil
+    }
+    //MARK: IMAGE
+
 }
 
 
@@ -47,9 +73,19 @@ extension GardenViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? DogCollectionViewCell else { return UICollectionViewCell() }
         
         
-        
         return cell
     }
-    
-    
 }
+
+extension GardenViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = self.collectionView.frame.width
+        let height = self.collectionView.frame.height
+        
+        return CGSize(width: width, height: height)
+    }
+}
+
+

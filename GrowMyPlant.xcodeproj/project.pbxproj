@@ -21,6 +21,8 @@
 		049CFCFD277322D000768DFE /* DogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFCFB277322D000768DFE /* DogCollectionViewCell.swift */; };
 		049CFCFE277322D000768DFE /* DogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049CFCFC277322D000768DFE /* DogCollectionViewCell.xib */; };
 		049CFD012773380C00768DFE /* AdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD002773380C00768DFE /* AdditionViewController.swift */; };
+		049CFD032773527C00768DFE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD022773527C00768DFE /* DataManager.swift */; };
+		049CFD062773548000768DFE /* SavedDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD052773548000768DFE /* SavedDog.swift */; };
 		680659C48504C75F91E9B6A8 /* Pods_GrowMyPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978912FE9DFF8EBC328CC7D /* Pods_GrowMyPlant.framework */; };
 		7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F42743DF6200A6B710 /* AppDelegate.swift */; };
 		7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */; };
@@ -51,6 +53,8 @@
 		049CFCFB277322D000768DFE /* DogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCollectionViewCell.swift; sourceTree = "<group>"; };
 		049CFCFC277322D000768DFE /* DogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogCollectionViewCell.xib; sourceTree = "<group>"; };
 		049CFD002773380C00768DFE /* AdditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionViewController.swift; sourceTree = "<group>"; };
+		049CFD022773527C00768DFE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		049CFD052773548000768DFE /* SavedDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDog.swift; sourceTree = "<group>"; };
 		7E2F94F12743DF6200A6B710 /* GrowMyPlant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowMyPlant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2F94F42743DF6200A6B710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			children = (
 				0416EBAE2771EF2700811973 /* NetworkManager.swift */,
 				0416EBC727720ABD00811973 /* ImageManager.swift */,
+				049CFD022773527C00768DFE /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -136,6 +141,14 @@
 			path = Addition;
 			sourceTree = "<group>";
 		};
+		049CFD042773546600768DFE /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				049CFD052773548000768DFE /* SavedDog.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
 		29B8CAD98B0E7162F3D00FEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		7E2F94F32743DF6200A6B710 /* GrowMyPlant */ = {
 			isa = PBXGroup;
 			children = (
+				049CFD042773546600768DFE /* RealmModel */,
 				046D3C5927727551004C7A91 /* JSONModels */,
 				7EEB9DDF2750EA66000134B1 /* Main */,
 				7E2F952E274BA86100A6B710 /* Reminders */,
@@ -372,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049CFD062773548000768DFE /* SavedDog.swift in Sources */,
 				046D3C66277275E3004C7A91 /* Height.swift in Sources */,
 				046D3C68277275E3004C7A91 /* Image.swift in Sources */,
 				0416EBAF2771EF2700811973 /* NetworkManager.swift in Sources */,
@@ -391,6 +406,7 @@
 				049AA37E27722A4700A35E6E /* DetailsViewController.swift in Sources */,
 				7E2F95152744F2A700A6B710 /* TabBarController.swift in Sources */,
 				7E2F9530274BA89800A6B710 /* RemindersViewController.swift in Sources */,
+				049CFD032773527C00768DFE /* DataManager.swift in Sources */,
 				7E2F95092744DF8800A6B710 /* GardenViewController.swift in Sources */,
 				7E2F950B2744E44B00A6B710 /* SceneDelegate.swift in Sources */,
 			);

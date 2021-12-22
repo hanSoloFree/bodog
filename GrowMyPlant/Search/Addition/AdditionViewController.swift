@@ -1,9 +1,18 @@
+import Photos
+import PhotosUI
 import UIKit
 
 class AdditionViewController: UIViewController {
     
     var defaultImage: UIImage?
     var defaultBreed: String?
+    
+    var selectedImage: UIImage?
+    var newImageSet: Bool = false
+    
+    var documentsUrl: URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dogImageFrameView: UIView!
@@ -19,7 +28,6 @@ class AdditionViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var clearAllButton: UIButton!
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +41,73 @@ class AdditionViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
+        if self.nameTextField.text != "" && newImageSet  {
+            
+            guard let name = self.nameTextField.text else { return }
+            guard let image = self.dogImageView.image else { return }
+            guard let imagePath =  save(image: image, fileName: name) else { return }
+            guard let breed = self.breedLabel.text else { return }
+            let bio = self.bioTextField.text
+            
+            let object = SavedDog()
+            object.birthDate = self.birthDatePicker.date
+            object.genderSegmentIndex = self.genderSegmentControl
+                .selectedSegmentIndex
+            object.imagePath = imagePath
+            object.name = name
+            object.bio = bio ?? "No bio."
+            object.breed = breed
+            object.spayed = self.spayedSwitch.isOn
+            
+            if DataManager.shared.save(object: object) {
+                print("saved")
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                print("you already have this dog")
+            }
+            
+        }
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func clearAllButtonPressed(_ sender: UIButton) {
+        self.dogImageFrameView.backgroundColor = .systemGray
+        self.dogImageView.image = UIImage(named: "camera")
         
+        let currentDate = Date()
+        self.birthDatePicker.setDate(currentDate, animated: true)
+        
+        self.genderSegmentControl.selectedSegmentIndex = 0
+        
+        self.nameTextField.text = ""
+        self.bioTextField.text = ""
+        
+        self.spayedSwitch.isOn = false
+        
+        self.newImageSet = false
+        
+        DataManager.shared.deleteAll()
     }
+    
+    // MARK: IMAGE SAVE
+    
+    private func save(image: UIImage, fileName: String) -> String? {
+        let fileName = fileName
+        let fileURL = documentsUrl.appendingPathComponent(fileName)
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
+           try? imageData.write(to: fileURL, options: .atomic)
+           return fileName // ----> Save fileName
+        }
+        print("Error saving image")
+        return nil
+    }
+    
+    //MARK: IMAGE SAVE
+    
+    
     
     func setupDefaults() {
         if let breed = self.defaultBreed {
@@ -76,13 +142,50 @@ class AdditionViewController: UIViewController {
     @objc func setDefaultImage() {
         if let defaultImage = defaultImage {
             self.dogImageView.image = defaultImage
-            self.dogImageFrameView.isHidden = false
+            self.dogImageFrameView.backgroundColor = .white
+            
+            self.newImageSet = true
         }
     }
     
     @objc func setImage() {
-        //
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.selectionLimit = 1
+        config.filter = .images
+        
+        let photoPickerViewController = PHPickerViewController(configuration: config)
+        photoPickerViewController.delegate = self
+        
+        present(photoPickerViewController, animated: true)
     }
-    
-    
+}
+
+extension AdditionViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        let group = DispatchGroup()
+        
+        results.forEach { result in
+            group.enter()
+            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+                
+                defer {
+                    group.leave()
+                }
+                
+                guard let image = reading as? UIImage, error == nil else { return }
+                self.selectedImage = image
+            }
+        }
+        
+        group.notify(queue: .main) {
+            guard self.selectedImage != nil else { return }
+            self.dogImageView.image = self.selectedImage
+            self.dogImageFrameView.backgroundColor = .white
+            self.newImageSet = true
+        }
+        
+    }
 }

@@ -8,4 +8,5 @@ target 'GrowMyPlant' do
 
 	pod 'Alamofire'
 	pod 'SDWebImage'
+	pod 'RealmSwift'
 end
