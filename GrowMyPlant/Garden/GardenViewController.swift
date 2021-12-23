@@ -44,12 +44,7 @@ class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDe
             self.dogs = DataManager.shared.get()
             self.collectionView.reloadData()
         }
-        alert.modalPresentationStyle = .overFullScreen
-        present(alert, animated: true) {
-            UIView.animate(withDuration: 0.1) {
-                alert.view.backgroundColor = .black.withAlphaComponent(0.5)
-            }
-        }
+        present(alert, animated: true)
     }
     
     func placeholder(hide: Bool) {

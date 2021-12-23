@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NFc-8J-TFq">
-                        <rect key="frame" x="16" y="105.5" width="184.5" height="184.5"/>
+                        <rect key="frame" x="16" y="81.5" width="184.5" height="184.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="CCJ-50-YJH">
                                 <rect key="frame" x="6" y="6" width="172.5" height="172.5"/>
@@ -37,61 +37,61 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog's breed:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgB-Ri-KCx">
-                        <rect key="frame" x="224.5" y="105.5" width="149.5" height="29"/>
+                        <rect key="frame" x="224.5" y="81.5" width="149.5" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="breed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4K-YS-lVC">
-                        <rect key="frame" x="224.5" y="142.5" width="165.5" height="20.5"/>
+                        <rect key="frame" x="224.5" y="118.5" width="165.5" height="20.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdR-aG-iIv">
-                        <rect key="frame" x="224.5" y="175" width="52" height="29"/>
+                        <rect key="frame" x="224.5" y="151" width="52" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gender" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcx-qo-o4c">
-                        <rect key="frame" x="224.5" y="212" width="165.5" height="20.5"/>
+                        <rect key="frame" x="224.5" y="188" width="165.5" height="20.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPZ-GR-UEv">
-                        <rect key="frame" x="224.5" y="244.5" width="103.5" height="29"/>
+                        <rect key="frame" x="224.5" y="220.5" width="103.5" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-Ds-cHD">
-                        <rect key="frame" x="348" y="236" width="46" height="46"/>
+                        <rect key="frame" x="348" y="212" width="46" height="46"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="gIf-Ds-cHD" secondAttribute="height" multiplier="1:1" id="EE9-lM-9rJ"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog's birth date and age:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt1-Ci-mPR">
-                        <rect key="frame" x="24" y="297.5" width="366" height="29"/>
+                        <rect key="frame" x="24" y="273.5" width="366" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date and age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PZ-ou-ugb">
-                        <rect key="frame" x="24" y="342.5" width="366" height="26.5"/>
+                        <rect key="frame" x="24" y="318.5" width="366" height="26.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail information:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-zN-CZ4">
-                        <rect key="frame" x="24" y="393" width="366" height="29"/>
+                        <rect key="frame" x="24" y="369" width="366" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cV-GK-rSa">
-                        <rect key="frame" x="24" y="438" width="366" height="26.5"/>
+                        <rect key="frame" x="24" y="414" width="366" height="26.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -128,13 +128,13 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="LgB-Ri-KCx" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="bottom" constant="48" id="1II-EC-GXs"/>
+                <constraint firstItem="LgB-Ri-KCx" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="bottom" constant="24" id="1II-EC-GXs"/>
                 <constraint firstItem="Jt1-Ci-mPR" firstAttribute="top" secondItem="qPZ-GR-UEv" secondAttribute="bottom" constant="24" id="1l4-EW-AP5"/>
                 <constraint firstAttribute="trailing" secondItem="gIf-Ds-cHD" secondAttribute="trailing" constant="20" id="8oY-WU-iMt"/>
                 <constraint firstItem="qPZ-GR-UEv" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="ADP-f4-UJ9"/>
                 <constraint firstAttribute="trailing" secondItem="H4K-YS-lVC" secondAttribute="trailing" constant="24" id="BGl-3L-bC4"/>
                 <constraint firstItem="NFc-8J-TFq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="DKk-8E-yax"/>
-                <constraint firstItem="NFc-8J-TFq" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="bottom" constant="48" id="Hqn-gj-APK"/>
+                <constraint firstItem="NFc-8J-TFq" firstAttribute="top" secondItem="ler-OF-c1S" secondAttribute="bottom" constant="24" id="Hqn-gj-APK"/>
                 <constraint firstItem="ler-OF-c1S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JRB-ih-v8B"/>
                 <constraint firstAttribute="trailing" secondItem="5PZ-ou-ugb" secondAttribute="trailing" constant="24" id="Nwe-WX-cGc"/>
                 <constraint firstItem="H4K-YS-lVC" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="Qx3-qR-6Un"/>

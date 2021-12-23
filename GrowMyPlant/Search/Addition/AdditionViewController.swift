@@ -66,14 +66,17 @@ class AdditionViewController: UIViewController {
             } else {
                 let alert = AlertService.shared.alert("You have already saved this dog!\nCheck for information you've typed!")
                 self.present(alert, animated: true)
-                
             }
             
         }
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func clearAllButtonPressed(_ sender: UIButton) {
@@ -107,7 +110,6 @@ class AdditionViewController: UIViewController {
             return nil
         }
     }
-
     
     
     func setupDefaults() {

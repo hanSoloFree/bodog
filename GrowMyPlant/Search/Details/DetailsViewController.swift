@@ -39,9 +39,15 @@ class DetailsViewController: UIViewController {
         additionViewController.defaultImage = dogImageView.image
         additionViewController.defaultBreed = breedLabel.text
         
-        self.dismiss(animated: true) {
-            self.additionDelegate?.present(additionViewController: additionViewController)
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true) {
+                self.additionDelegate?.present(additionViewController: additionViewController)
+            }
         }
+
+        
     }
     
     func setupDetails() {

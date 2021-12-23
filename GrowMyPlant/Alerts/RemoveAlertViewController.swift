@@ -21,12 +21,11 @@ class RemoveAlertViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
     
     @IBAction func removeButtonPerssed(_ sender: UIButton) {
         deleteAction?()
-        self.view.backgroundColor = .black.withAlphaComponent(0)
         self.dismiss(animated: true)
     }
     
