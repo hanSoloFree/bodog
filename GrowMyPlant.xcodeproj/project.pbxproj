@@ -30,6 +30,9 @@
 		049CFD122773A3EC00768DFE /* RemoveAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD112773A3EC00768DFE /* RemoveAlertViewController.swift */; };
 		049CFD142773B5F600768DFE /* AddiitonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD132773B5F600768DFE /* AddiitonDelegate.swift */; };
 		049CFD162773BCB300768DFE /* SavingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFD152773BCB300768DFE /* SavingDelegate.swift */; };
+		049FFAE32774947A00E6BC13 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FFAE22774947A00E6BC13 /* CreateReminderViewController.swift */; };
+		049FFAE52774A7E100E6BC13 /* DogSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FFAE42774A7E100E6BC13 /* DogSelectorTableViewController.swift */; };
+		049FFAE72774AF4000E6BC13 /* SelectDogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FFAE62774AF4000E6BC13 /* SelectDogDelegate.swift */; };
 		680659C48504C75F91E9B6A8 /* Pods_GrowMyPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978912FE9DFF8EBC328CC7D /* Pods_GrowMyPlant.framework */; };
 		7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F42743DF6200A6B710 /* AppDelegate.swift */; };
 		7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */; };
@@ -69,6 +72,9 @@
 		049CFD112773A3EC00768DFE /* RemoveAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAlertViewController.swift; sourceTree = "<group>"; };
 		049CFD132773B5F600768DFE /* AddiitonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddiitonDelegate.swift; sourceTree = "<group>"; };
 		049CFD152773BCB300768DFE /* SavingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingDelegate.swift; sourceTree = "<group>"; };
+		049FFAE22774947A00E6BC13 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
+		049FFAE42774A7E100E6BC13 /* DogSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSelectorTableViewController.swift; sourceTree = "<group>"; };
+		049FFAE62774AF4000E6BC13 /* SelectDogDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F12743DF6200A6B710 /* GrowMyPlant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowMyPlant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2F94F42743DF6200A6B710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				049CFD0827738EA000768DFE /* RemoveCellDelegate.swift */,
 				049CFD132773B5F600768DFE /* AddiitonDelegate.swift */,
 				049CFD152773BCB300768DFE /* SavingDelegate.swift */,
+				049FFAE62774AF4000E6BC13 /* SelectDogDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -182,6 +189,15 @@
 				049CFD0B27739BF600768DFE /* Alert.storyboard */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		049FFAE12774945C00E6BC13 /* Addition */ = {
+			isa = PBXGroup;
+			children = (
+				049FFAE22774947A00E6BC13 /* CreateReminderViewController.swift */,
+				049FFAE42774A7E100E6BC13 /* DogSelectorTableViewController.swift */,
+			);
+			path = Addition;
 			sourceTree = "<group>";
 		};
 		29B8CAD98B0E7162F3D00FEA /* Frameworks */ = {
@@ -293,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				7E2F952F274BA89800A6B710 /* RemindersViewController.swift */,
+				049FFAE12774945C00E6BC13 /* Addition */,
 			);
 			path = Reminders;
 			sourceTree = "<group>";
@@ -431,6 +448,7 @@
 				7E2F952B27478A6A00A6B710 /* SearchViewController.swift in Sources */,
 				0416EBAD2771E81A00811973 /* SearchPopoverViewController.swift in Sources */,
 				046D3C67277275E3004C7A91 /* List.swift in Sources */,
+				049FFAE72774AF4000E6BC13 /* SelectDogDelegate.swift in Sources */,
 				0416EBC827720ABD00811973 /* ImageManager.swift in Sources */,
 				049CFCFD277322D000768DFE /* DogCollectionViewCell.swift in Sources */,
 				7E2F95172744FC7E00A6B710 /* CustomTabBarView.swift in Sources */,
@@ -440,6 +458,7 @@
 				7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */,
 				049CFD012773380C00768DFE /* AdditionViewController.swift in Sources */,
 				049CFD1027739CBD00768DFE /* AlertService.swift in Sources */,
+				049FFAE52774A7E100E6BC13 /* DogSelectorTableViewController.swift in Sources */,
 				0416EBAB2771DAF300811973 /* ExtensionUIView.swift in Sources */,
 				7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */,
 				0416EBC52772069500811973 /* SearchCollectionViewCell.swift in Sources */,
@@ -450,6 +469,7 @@
 				049CFD0927738EA000768DFE /* RemoveCellDelegate.swift in Sources */,
 				049CFD032773527C00768DFE /* DataManager.swift in Sources */,
 				049CFD122773A3EC00768DFE /* RemoveAlertViewController.swift in Sources */,
+				049FFAE32774947A00E6BC13 /* CreateReminderViewController.swift in Sources */,
 				7E2F95092744DF8800A6B710 /* GardenViewController.swift in Sources */,
 				049CFD0E27739C0700768DFE /* AlertViewController.swift in Sources */,
 				7E2F950B2744E44B00A6B710 /* SceneDelegate.swift in Sources */,

@@ -2,6 +2,12 @@ import UIKit
 
 class RemindersViewController: UIViewController {
     
+    
+    @IBOutlet weak var existingButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         extendedLayoutIncludesOpaqueBars = true
@@ -11,6 +17,34 @@ class RemindersViewController: UIViewController {
         setupLargeTitle()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setCornerRadiuses()
+    }
+    
+    @IBAction func existingButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        let dogs = DataManager.shared.get()
+        
+        if dogs.count > 0  {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let identifier = String(describing: CreateReminderViewController.self)
+            guard let createReminderViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? CreateReminderViewController else { return }
+            
+            present(createReminderViewController, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
+    
+    
+    func setCornerRadiuses() {
+        self.existingButton.layer.cornerRadius = 10
+        self.addButton.layer.cornerRadius = 10
+    }
     
     private func setupNavBar() {
         let navBarAppearance = UINavigationBarAppearance()

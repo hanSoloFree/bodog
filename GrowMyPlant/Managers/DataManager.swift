@@ -36,6 +36,22 @@ class  DataManager {
         return array
     }
     
+    func getNames() -> [String] {
+        self.data = realm.objects(SavedDog.self)
+        var names = [String]()
+        for dog in  data {
+            let name = dog.name
+            names.append(name)
+        }
+        return names
+    }
+    
+    func getBreedBy(name: String) -> String? {
+        let dog = realm.object(ofType: SavedDog.self, forPrimaryKey: name) 
+        let breed = dog?.breed
+        return breed
+    }
+    
     func deleteAll() {
         try! realm.write{
             realm.delete(data)

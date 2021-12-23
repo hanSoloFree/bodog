@@ -9,6 +9,7 @@ class SearchPopoverViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var gestureZone: UIView!
+    @IBOutlet weak var tapHereLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -44,7 +45,12 @@ class SearchPopoverViewController: UIViewController {
     }
     
     @objc func tap() {
-        self.dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.15) {
+            self.tapHereLabel.alpha = 0
+            self.gestureZone.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true)
+        }
     }
 }
 
