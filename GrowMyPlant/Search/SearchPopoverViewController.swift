@@ -8,16 +8,16 @@ class SearchPopoverViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var gestureZone: UIView!
-    @IBOutlet weak var tapHereLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var sadDogImageView: UIImageView!
+    @IBOutlet weak var noInformationLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         getData()
-        setupDismissGesture()
-        
         let cellName = String(describing: SearchCollectionViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
         
@@ -27,11 +27,27 @@ class SearchPopoverViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         containerView.layer.cornerRadius = 20
+        backButton.layer.cornerRadius = 8
     }
     
-    func setupDismissGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tap))
-        self.gestureZone.addGestureRecognizer(tap)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIfLoaded()
+    }
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
+    
+    func checkIfLoaded() {
+        self.activityIndicator.isHidden = true
+        self.activityIndicator.stopAnimating()
+        
+        if self.list.isEmpty && self.filteredList.isEmpty {
+            self.sadDogImageView.isHidden = false
+            self.noInformationLabel.text = "No information were loaded :(\nCheck you'r internet connection, or try to reload."
+            self.noInformationLabel.isHidden = false
+        }
     }
     
     func getData() {
@@ -40,16 +56,8 @@ class SearchPopoverViewController: UIViewController {
                 self.filteredList = list
                 self.list = list
                 self.collectionView.reloadData()
+                self.checkIfLoaded()
             }
-        }
-    }
-    
-    @objc func tap() {
-        UIView.animate(withDuration: 0.15) {
-            self.tapHereLabel.alpha = 0
-            self.gestureZone.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true)
         }
     }
 }

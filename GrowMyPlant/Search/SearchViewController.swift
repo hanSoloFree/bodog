@@ -20,10 +20,10 @@ class SearchViewController: UIViewController {
         guard let popoverViewController = storyboard?.instantiateViewController(withIdentifier: "SearchPopoverViewController") as? SearchPopoverViewController else { return }
         popoverViewController.modalPresentationStyle = .overFullScreen
         present(popoverViewController, animated: true) {
-            UIView.animate(withDuration: 0.15) {
-                popoverViewController.gestureZone.backgroundColor = .black.withAlphaComponent(0.8)
-                popoverViewController.tapHereLabel.alpha = 1
-            }
+//            UIView.animate(withDuration: 0.15) {
+//                popoverViewController.gestureZone.backgroundColor = .black.withAlphaComponent(0.8)
+//                popoverViewController.tapHereLabel.alpha = 1
+//            }
         }
     }
     

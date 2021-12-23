@@ -1,9 +1,21 @@
 import UIKit
 
-class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDelegate {
+class GardenViewController: UIViewController, RemoveCellDelegate {
     
-    var dogs: [SavedDog]?
-        
+    var dogs: [SavedDog]? {
+        didSet {
+            if let dogs = self.dogs {
+                if !dogs.isEmpty {
+                    navigationItem.title = "My Dogs: \(dogs.count)"
+                } else {
+                    navigationItem.title = "My Dogs"
+                }
+            } else {
+                navigationItem.title = "My Dogs"
+            }
+        }
+    }
+    
     var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
@@ -11,7 +23,7 @@ class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDe
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dogsLabel: UILabel!
-    @IBOutlet weak var findThemLabel: UILabel!
+    @IBOutlet weak var sadDogImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -50,19 +62,17 @@ class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDe
     func placeholder(hide: Bool) {
         self.stackView.isHidden = hide
         self.dogsLabel.isHidden = hide
-        self.findThemLabel.isHidden = hide
+        self.sadDogImageView.isHidden = hide
     }
     
     private func setupNavBar() {
-        
-        navigationItem.title = "My Dogs: \(dogs?.count ?? 0)"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem?.imageInsets = .init(top: 6, left: 0, bottom: 0, right: 0)
         
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
         let font = UIFont(name: "Copperplate Bold", size: 40) ?? UIFont.systemFont(ofSize: 40)
-
+        
         navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor : CustomColors.darkRed, NSAttributedString.Key.font : font]
         
         navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : CustomColors.darkRed, NSAttributedString.Key.font : font]
@@ -71,6 +81,16 @@ class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDe
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         self.navigationController?.navigationBar.setNeedsLayout()
+        
+        if let dogs = self.dogs {
+            if !dogs.isEmpty {
+                navigationItem.title = "My Dogs: \(dogs.count)"
+            } else {
+                navigationItem.title = "My Dogs"
+            }
+        } else {
+            navigationItem.title = "My Dogs"
+        }
     }
 }
 
@@ -81,7 +101,7 @@ extension GardenViewController: UICollectionViewDataSource {
         if count > 0 {
             placeholder(hide: true)
         } else {
-           placeholder(hide: false)
+            placeholder(hide: false)
         }
         return count
     }
