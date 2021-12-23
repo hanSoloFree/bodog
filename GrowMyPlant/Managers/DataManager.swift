@@ -63,5 +63,4 @@ class  DataManager {
             realm.delete(object)
         }
     }
-    
 }

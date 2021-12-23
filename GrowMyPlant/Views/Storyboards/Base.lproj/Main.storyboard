@@ -445,62 +445,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="FA9-Zo-mIX">
-                                <rect key="frame" x="32" y="426" width="350" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="io9-NN-uSc">
-                                        <rect key="frame" x="0.0" y="0.0" width="159" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="22"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Existing">
-                                            <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="existingButtonPressed:" destination="hQY-WH-fUD" eventType="touchUpInside" id="fQc-FW-yWu"/>
-                                            <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="E7A-qP-eiX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfK-Fi-QWt">
-                                        <rect key="frame" x="191" y="0.0" width="159" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="22"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Add new">
-                                            <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="addButtonPressed:" destination="hQY-WH-fUD" eventType="touchUpInside" id="nIg-Um-Tds"/>
-                                            <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="m2H-Pi-FYE"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfK-Fi-QWt">
+                                <rect key="frame" x="80" y="422.5" width="254" height="51"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="FA9-Zo-mIX" secondAttribute="height" multiplier="8:1" id="lv8-jC-28a"/>
+                                    <constraint firstAttribute="width" secondItem="PfK-Fi-QWt" secondAttribute="height" multiplier="5:1" id="DTF-IZ-iBQ"/>
                                 </constraints>
-                            </stackView>
-                            <stackView contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0e-kd-Pm0">
-                                <rect key="frame" x="32" y="374" width="325" height="28"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you can" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehJ-WQ-Wju">
-                                        <rect key="frame" x="0.0" y="3" width="158.5" height="25"/>
-                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MANAGE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhA-2j-Bn4">
-                                        <rect key="frame" x="166.5" y="0.0" width="158.5" height="28"/>
-                                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
-                                        <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with reminders" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQw-aA-7uN">
-                                <rect key="frame" x="210" y="494" width="185" height="25"/>
+                                <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="26"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Create new!">
+                                    <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="hQY-WH-fUD" eventType="touchUpInside" id="nIg-Um-Tds"/>
+                                    <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="m2H-Pi-FYE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehJ-WQ-Wju">
+                                <rect key="frame" x="24" y="381.5" width="92.5" height="25"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhA-2j-Bn4">
+                                <rect key="frame" x="132.5" y="374" width="62.5" height="32.5"/>
+                                <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a reminder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCd-iJ-hxr">
+                                <rect key="frame" x="211" y="381.5" width="132.5" height="25"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="about you'r dog!" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onc-hc-rIw">
+                                <rect key="frame" x="178.5" y="489.5" width="211.5" height="25"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -509,20 +490,23 @@
                         <viewLayoutGuide key="safeArea" id="yMT-XN-QQl"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="FA9-Zo-mIX" firstAttribute="centerY" secondItem="mww-vn-RxD" secondAttribute="centerY" id="5Dv-Mr-ly8"/>
-                            <constraint firstItem="FA9-Zo-mIX" firstAttribute="leading" secondItem="yMT-XN-QQl" secondAttribute="leading" constant="32" id="7p0-9r-kja"/>
-                            <constraint firstItem="b0e-kd-Pm0" firstAttribute="leading" secondItem="yMT-XN-QQl" secondAttribute="leading" constant="32" id="L6L-yz-bzj"/>
-                            <constraint firstItem="zQw-aA-7uN" firstAttribute="centerX" secondItem="PfK-Fi-QWt" secondAttribute="centerX" id="Rdo-X0-Go3"/>
-                            <constraint firstItem="FA9-Zo-mIX" firstAttribute="centerX" secondItem="mww-vn-RxD" secondAttribute="centerX" id="ae2-G6-4xf"/>
-                            <constraint firstItem="yMT-XN-QQl" firstAttribute="trailing" secondItem="FA9-Zo-mIX" secondAttribute="trailing" constant="32" id="cdm-ul-LI8"/>
-                            <constraint firstItem="zQw-aA-7uN" firstAttribute="top" secondItem="FA9-Zo-mIX" secondAttribute="bottom" constant="24" id="kku-KB-hGY"/>
-                            <constraint firstItem="FA9-Zo-mIX" firstAttribute="top" secondItem="b0e-kd-Pm0" secondAttribute="bottom" constant="24" id="p2R-Jc-Gau"/>
+                            <constraint firstItem="ehJ-WQ-Wju" firstAttribute="leading" secondItem="yMT-XN-QQl" secondAttribute="leading" constant="24" id="0qF-N1-gza"/>
+                            <constraint firstItem="PfK-Fi-QWt" firstAttribute="centerY" secondItem="mww-vn-RxD" secondAttribute="centerY" id="5VS-ts-PMo"/>
+                            <constraint firstItem="yMT-XN-QQl" firstAttribute="trailing" secondItem="PfK-Fi-QWt" secondAttribute="trailing" constant="80" id="EN6-dB-a86"/>
+                            <constraint firstItem="yMT-XN-QQl" firstAttribute="trailing" secondItem="onc-hc-rIw" secondAttribute="trailing" constant="24" id="Eye-xV-0fo"/>
+                            <constraint firstItem="PfK-Fi-QWt" firstAttribute="centerX" secondItem="mww-vn-RxD" secondAttribute="centerX" id="QTr-GE-zCN"/>
+                            <constraint firstItem="PfK-Fi-QWt" firstAttribute="top" secondItem="sCd-iJ-hxr" secondAttribute="bottom" constant="16" id="S72-Gi-82f"/>
+                            <constraint firstItem="PfK-Fi-QWt" firstAttribute="leading" secondItem="yMT-XN-QQl" secondAttribute="leading" constant="80" id="WOl-yg-Zo6"/>
+                            <constraint firstItem="PfK-Fi-QWt" firstAttribute="top" secondItem="rhA-2j-Bn4" secondAttribute="bottom" constant="16" id="dQI-Dg-KAO"/>
+                            <constraint firstItem="sCd-iJ-hxr" firstAttribute="leading" secondItem="rhA-2j-Bn4" secondAttribute="trailing" constant="16" id="eBb-fi-4lZ"/>
+                            <constraint firstItem="onc-hc-rIw" firstAttribute="top" secondItem="PfK-Fi-QWt" secondAttribute="bottom" constant="16" id="eUa-CL-dd2"/>
+                            <constraint firstItem="PfK-Fi-QWt" firstAttribute="top" secondItem="ehJ-WQ-Wju" secondAttribute="bottom" constant="16" id="lxG-3q-8AB"/>
+                            <constraint firstItem="rhA-2j-Bn4" firstAttribute="leading" secondItem="ehJ-WQ-Wju" secondAttribute="trailing" constant="16" id="t0e-5N-svu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sZc-OJ-Ajq"/>
                     <connections>
                         <outlet property="addButton" destination="PfK-Fi-QWt" id="EvM-HL-fqd"/>
-                        <outlet property="existingButton" destination="io9-NN-uSc" id="Ykq-h6-Qvh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMW-ss-1Ww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -576,14 +560,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="PGO-CI-WKz">
-                                        <rect key="frame" x="212" y="206" width="92" height="31"/>
+                                        <rect key="frame" x="212" y="206" width="91.5" height="31"/>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kAr-i4-CGN">
                                         <rect key="frame" x="32" y="261" width="302" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SF7-eO-S7J">
                                                 <rect key="frame" x="0.0" y="0.0" width="143" height="36"/>
-                                                <color key="backgroundColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65000003579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -650,6 +634,7 @@
                     <connections>
                         <outlet property="addButton" destination="udh-e1-9mZ" id="w62-R5-Ve3"/>
                         <outlet property="cancelButton" destination="SF7-eO-S7J" id="7oz-d8-9Sr"/>
+                        <outlet property="containerView" destination="TPE-km-Bms" id="wiR-Ce-qkm"/>
                         <outlet property="datePicker" destination="PGO-CI-WKz" id="9tB-NY-ARK"/>
                         <outlet property="descriptionTextField" destination="XTB-UY-dBC" id="E9O-gC-U17"/>
                         <outlet property="selectedDogLabel" destination="nCX-uf-SEt" id="lNh-xG-NPx"/>
@@ -686,7 +671,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnZ-5t-KFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2442" y="1546"/>
+            <point key="canvasLocation" x="2235" y="1560"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XHT-JT-XJ3">
@@ -1002,9 +987,6 @@
         <image name="set-alarm" width="16" height="16"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

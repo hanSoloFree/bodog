@@ -55,7 +55,7 @@ class GardenViewController: UIViewController/*, UITabBarDelegate*/, RemoveCellDe
     
     private func setupNavBar() {
         
-        navigationItem.title = "My Dogs"
+        navigationItem.title = "My Dogs: \(dogs?.count ?? 0)"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem?.imageInsets = .init(top: 6, left: 0, bottom: 0, right: 0)
         

@@ -3,7 +3,6 @@ import UIKit
 class RemindersViewController: UIViewController {
     
     
-    @IBOutlet weak var existingButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     
     
@@ -22,9 +21,6 @@ class RemindersViewController: UIViewController {
         setCornerRadiuses()
     }
     
-    @IBAction func existingButtonPressed(_ sender: UIButton) {
-    }
-    
     @IBAction func addButtonPressed(_ sender: UIButton) {
         let dogs = DataManager.shared.get()
         
@@ -33,16 +29,15 @@ class RemindersViewController: UIViewController {
             let identifier = String(describing: CreateReminderViewController.self)
             guard let createReminderViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? CreateReminderViewController else { return }
             
-            present(createReminderViewController, animated: true, completion: nil)
+            present(createReminderViewController, animated: true) {
+                UIView.animate(withDuration: 0.15) {
+                    createReminderViewController.view.backgroundColor = .black.withAlphaComponent(0.5)
+                }
+            }
         }
     }
     
-    
-    
-    
-    
     func setCornerRadiuses() {
-        self.existingButton.layer.cornerRadius = 10
         self.addButton.layer.cornerRadius = 10
     }
     

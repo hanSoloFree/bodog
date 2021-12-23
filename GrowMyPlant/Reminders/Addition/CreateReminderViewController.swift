@@ -5,6 +5,8 @@ class CreateReminderViewController: UIViewController {
     
     let notificationCenter = UNUserNotificationCenter.current()
     
+    
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var selectedDogLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -26,6 +28,7 @@ class CreateReminderViewController: UIViewController {
     
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        dismissWithAnimation()
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
@@ -35,7 +38,9 @@ class CreateReminderViewController: UIViewController {
             guard let body = descriptionTextField.text else { return }
             
             addNotification(title: title, body: body)
-            self.dismiss(animated: true)
+            
+            dismissWithAnimation()
+            
         }
     }
     
@@ -55,7 +60,6 @@ class CreateReminderViewController: UIViewController {
         dogSelectorViewController.selectionDelegate = self
         
         self.present(dogSelectorViewController, animated: true)
-        
     }
     
     func allowNotifications() {
@@ -69,22 +73,30 @@ class CreateReminderViewController: UIViewController {
         }
     }
     
+    func dismissWithAnimation() {
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true)
+        }
+    }
+    
     func setCornerRadiuses() {
+        self.containerView.layer.cornerRadius = 20
         self.cancelButton.layer.cornerRadius = 10
         self.addButton.layer.cornerRadius = 10
     }
     
     func setupGestures() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(selectDogTapped))
-        tap.numberOfTapsRequired = 1
+        let selectGesture = UITapGestureRecognizer(target: self, action: #selector(selectDogTapped))
+        selectGesture.numberOfTapsRequired = 1
         self.selectedDogLabel.isUserInteractionEnabled = true
-        self.selectedDogLabel.addGestureRecognizer(tap)
+        self.selectedDogLabel.addGestureRecognizer(selectGesture)
     }
     
     func addNotification(title: String, body: String) {
         
         let notificationDate = self.datePicker.date
-        
         
         let content = UNMutableNotificationContent()
         content.title = title
@@ -96,7 +108,7 @@ class CreateReminderViewController: UIViewController {
         
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components,
-                                                  repeats: false)
+                                                    repeats: false)
         
         let request = UNNotificationRequest(identifier: title,
                                             content: content,
