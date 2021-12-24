@@ -64,25 +64,3 @@ class  DataManager {
         }
     }
 }
-
-//MARK: - USER DEFAULTS
-//MARK: DOG NAME - VALUE, REMINDER DESCRIPTION = KEY
-
-extension DataManager {
-    
-    func saveReminder(title: String, body: String) {
-        let standart = UserDefaults.standard
-        
-        var reminders = getReminders()
-        reminders.updateValue(title, forKey: body)
-        
-        standart.set(reminders, forKey: "reminders")
-    }
-    
-    func getReminders() -> [String:Any] {
-        let standart = UserDefaults.standard
-        
-        guard let reminders = standart.dictionary(forKey: "reminders") else { return [:] }
-        return reminders
-    }
-}

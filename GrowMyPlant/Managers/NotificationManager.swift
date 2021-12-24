@@ -15,11 +15,16 @@ struct NotificationManager {
     
     func addNotification(title: String, body: String, date: Date) {
         let notificationDate = date
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
         
+        let strinDate = formatter.string(from: notificationDate)
+                
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "reminderSound.mp3"))
+        content.userInfo = ["date": strinDate]
         
         let components = Calendar.current.dateComponents([.hour, .minute], from: notificationDate)
         

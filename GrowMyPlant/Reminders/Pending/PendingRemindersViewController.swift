@@ -21,7 +21,6 @@ class PendingRemindersViewController: UIViewController {
         
         NotificationManager.shared.getPendingNotifications { contents in
             self.reminders = contents
-            print(self.reminders.count)
         }
                 
         let height = self.tableView.frame.height + self.mainLabel.frame.height + self.swipeLabel.frame.height + 40
@@ -91,8 +90,9 @@ extension PendingRemindersViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ReminderTableViewCell else { return UITableViewCell() }
         
         let reminder = reminders[indexPath.row]
+        let date = reminder.userInfo["date"] as! String 
         
-        cell.configureWith(name: reminder.title, description: reminder.body, date: "12/12/21")
+        cell.configureWith(name: reminder.title, description: reminder.body, date: date)
         
         return cell
     }

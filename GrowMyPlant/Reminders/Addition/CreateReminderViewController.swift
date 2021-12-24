@@ -37,9 +37,7 @@ class CreateReminderViewController: UIViewController {
             guard let body = descriptionTextField.text else { return }
             
             NotificationManager.shared.addNotification(title: title, body: body, date: self.datePicker.date)
-            
-            DataManager.shared.saveReminder(title: title, body: body)
-            
+                
             let alert = AlertService.shared.alert("Reminder was added!")
             alert.savingDelegate = self
             
