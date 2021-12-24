@@ -20,8 +20,6 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         homeButton.setBackgroundImage(UIImage(named: "dog"), for: .normal)
 
         homeButton.layer.shadowColor = UIColor.white.cgColor
-        homeButton.layer.shadowOpacity = 0.1
-        homeButton.layer.shadowOffset = CGSize(width: 4, height: 4)
         homeButton.layer.cornerRadius = homeButton.frame.width / 2.6
         homeButton.backgroundColor = .clear
         self.tabBar.addSubview(homeButton)
