@@ -67,25 +67,25 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog's birth date and age:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jt1-Ci-mPR">
-                        <rect key="frame" x="24" y="263.5" width="366" height="29"/>
+                        <rect key="frame" x="24" y="286.5" width="366" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date and age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PZ-ou-ugb">
-                        <rect key="frame" x="24" y="308.5" width="366" height="26.5"/>
+                        <rect key="frame" x="24" y="331.5" width="366" height="26.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail information:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDi-zN-CZ4">
-                        <rect key="frame" x="24" y="359" width="366" height="29"/>
+                        <rect key="frame" x="24" y="382" width="366" height="29"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cV-GK-rSa">
-                        <rect key="frame" x="24" y="404" width="366" height="26.5"/>
+                        <rect key="frame" x="24" y="427" width="366" height="26.5"/>
                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="23"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -122,7 +122,6 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Jt1-Ci-mPR" firstAttribute="top" secondItem="qPZ-GR-UEv" secondAttribute="bottom" constant="24" id="1l4-EW-AP5"/>
                 <constraint firstItem="atl-Aj-Sjt" firstAttribute="top" secondItem="bK6-7h-J4L" secondAttribute="bottom" constant="8" id="6wZ-YK-TT4"/>
                 <constraint firstItem="atl-Aj-Sjt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="8io-vZ-xYH"/>
                 <constraint firstItem="bK6-7h-J4L" firstAttribute="top" secondItem="cQu-vr-yon" secondAttribute="bottom" constant="8" id="9eA-R9-cxP"/>
@@ -140,6 +139,7 @@
                 <constraint firstItem="Pcx-qo-o4c" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="WKm-Xe-c2S"/>
                 <constraint firstAttribute="trailing" secondItem="Jt1-Ci-mPR" secondAttribute="trailing" constant="24" id="XOx-iz-t01"/>
                 <constraint firstItem="H4K-YS-lVC" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="aro-A2-fs6"/>
+                <constraint firstItem="Jt1-Ci-mPR" firstAttribute="top" secondItem="NFc-8J-TFq" secondAttribute="bottom" constant="24" id="bt5-RW-sUU"/>
                 <constraint firstItem="LgB-Ri-KCx" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="fP5-jM-SPc"/>
                 <constraint firstItem="DdR-aG-iIv" firstAttribute="leading" secondItem="NFc-8J-TFq" secondAttribute="trailing" constant="24" id="fQh-KG-eOf"/>
                 <constraint firstItem="5PZ-ou-ugb" firstAttribute="top" secondItem="Jt1-Ci-mPR" secondAttribute="bottom" constant="16" id="fRu-gg-8E0"/>
