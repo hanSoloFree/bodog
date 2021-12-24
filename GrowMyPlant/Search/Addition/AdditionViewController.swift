@@ -32,6 +32,7 @@ class AdditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefaults()
+        print(self.nameTextField.text)
     }
     
     override func viewDidLayoutSubviews() {
@@ -80,25 +81,30 @@ class AdditionViewController: UIViewController {
     }
     
     @IBAction func clearAllButtonPressed(_ sender: UIButton) {
-        self.dogImageFrameView.backgroundColor = .systemGray
-        self.dogImageView.image = UIImage(named: "camera")
         
-        let currentDate = Date()
-        self.birthDatePicker.setDate(currentDate, animated: true)
-        
-        self.genderSegmentControl.selectedSegmentIndex = 0
-        
-        self.nameTextField.text = ""
-        self.bioTextField.text = ""
-        
-        self.spayedSwitch.isOn = false
-        
-        self.newImageSet = false
-        
-        let alert = AlertService.shared.alert("Cleaned")
-        present(alert, animated: true)
+        if self.nameTextField.text != "" || self.bioTextField.text != "" || self.newImageSet || self.spayedSwitch.isOn {
+            
+            
+            self.dogImageFrameView.backgroundColor = .systemGray
+            self.dogImageView.image = UIImage(named: "camera")
+            
+            let currentDate = Date()
+            self.birthDatePicker.setDate(currentDate, animated: true)
+            
+            self.genderSegmentControl.selectedSegmentIndex = 0
+            
+            self.nameTextField.text = ""
+            self.bioTextField.text = ""
+            
+            self.spayedSwitch.isOn = false
+            
+            self.newImageSet = false
+            
+            let alert = AlertService.shared.alert("Cleaned")
+            present(alert, animated: true)
+        }
     }
-        
+    
     private func save(image: UIImage, fileName: String) -> String? {
         let fileName = fileName
         let fileURL = documentsUrl.appendingPathComponent(fileName)

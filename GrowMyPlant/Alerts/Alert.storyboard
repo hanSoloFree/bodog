@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JR-jb-Vr2">
-                                <rect key="frame" x="80" y="424.5" width="254" height="47.5"/>
+                                <rect key="frame" x="80" y="427.5" width="254" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-OM-7Lv">
-                                        <rect key="frame" x="8" y="8" width="238" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
+                                        <rect key="frame" x="8" y="8" width="238" height="25"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
@@ -37,7 +37,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7JR-jb-Vr2" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="FE1-9N-COe"/>
                             <constraint firstItem="7JR-jb-Vr2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="80" id="qci-Ph-ifu"/>

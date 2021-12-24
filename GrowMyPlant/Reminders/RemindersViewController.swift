@@ -34,6 +34,9 @@ class RemindersViewController: UIViewController {
                     createReminderViewController.view.backgroundColor = .black.withAlphaComponent(0.5)
                 }
             }
+        } else {
+            let alert = AlertService.shared.alert("You don't have any dogs to add a reminder :(")
+            present(alert, animated: true)
         }
     }
     

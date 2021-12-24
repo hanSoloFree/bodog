@@ -490,7 +490,6 @@
                                 </state>
                                 <connections>
                                     <action selector="addButtonPressed:" destination="hQY-WH-fUD" eventType="touchUpInside" id="nIg-Um-Tds"/>
-                                    <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="m2H-Pi-FYE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehJ-WQ-Wju">
