@@ -19,12 +19,7 @@ class SearchViewController: UIViewController {
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         guard let popoverViewController = storyboard?.instantiateViewController(withIdentifier: "SearchPopoverViewController") as? SearchPopoverViewController else { return }
         popoverViewController.modalPresentationStyle = .overFullScreen
-        present(popoverViewController, animated: true) {
-//            UIView.animate(withDuration: 0.15) {
-//                popoverViewController.gestureZone.backgroundColor = .black.withAlphaComponent(0.8)
-//                popoverViewController.tapHereLabel.alpha = 1
-//            }
-        }
+        present(popoverViewController, animated: true)
     }
     
     private func setupNavBar() {

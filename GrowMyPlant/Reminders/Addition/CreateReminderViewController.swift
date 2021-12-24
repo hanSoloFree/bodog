@@ -16,7 +16,6 @@ class CreateReminderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationCenter.delegate = self
         allowNotifications()
         setupGestures()
     }
@@ -64,10 +63,10 @@ class CreateReminderViewController: UIViewController {
     
     func allowNotifications() {
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            guard granted else { return }
+            
             self.notificationCenter.getNotificationSettings { settings in
                 if settings.authorizationStatus != .authorized {
-                    fatalError()
+                    print(false)
                 }
             }
         }
@@ -124,11 +123,6 @@ extension CreateReminderViewController: UIPopoverPresentationControllerDelegate 
     }
 }
 
-extension CreateReminderViewController: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.badge, .sound, .banner])
-    }
-}
 
 extension CreateReminderViewController: SelectDogDelegate {
     func set(name: String) {
