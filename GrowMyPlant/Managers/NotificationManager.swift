@@ -21,20 +21,31 @@ struct NotificationManager {
         content.body = body
         content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "reminderSound.mp3"))
         
-        
         let components = Calendar.current.dateComponents([.hour, .minute], from: notificationDate)
         
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components,
                                                     repeats: false)
         
-        let request = UNNotificationRequest(identifier: title,
+        let request = UNNotificationRequest(identifier: title + body,
                                             content: content,
                                             trigger: trigger)
         
         notificationCenter.add(request, withCompletionHandler: nil)
     }
     
+    func getPendingNotifications(completion: @escaping  ([UNNotificationContent]) -> ())  {
+        var contents = [UNNotificationContent]()
+        notificationCenter.getPendingNotificationRequests { reminders in
+            reminders.forEach { request in
+                let content = request.content
+                contents.append(content)
+            }
+            completion(contents)
+        }
+    }
     
-    
+    func removeNotification(with identifier: String) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
 }

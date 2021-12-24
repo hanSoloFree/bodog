@@ -39,8 +39,9 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         
         homeButton.addTarget(self, action: #selector(handleMoveToHome), for: .touchUpInside)
         
-        let tapAndHold = UILongPressGestureRecognizer(target: self, action: #selector(showFact))
-        homeButton.addGestureRecognizer(tapAndHold)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(showFact))
+        doubleTap.numberOfTapsRequired = 2
+        homeButton.addGestureRecognizer(doubleTap)
         
         homeButton.clipsToBounds = true
         self.view.layoutIfNeeded()

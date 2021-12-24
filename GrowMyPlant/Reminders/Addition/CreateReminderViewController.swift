@@ -38,7 +38,12 @@ class CreateReminderViewController: UIViewController {
             
             NotificationManager.shared.addNotification(title: title, body: body, date: self.datePicker.date)
             
-            dismissWithAnimation()
+            DataManager.shared.saveReminder(title: title, body: body)
+            
+            let alert = AlertService.shared.alert("Reminder was added!")
+            alert.savingDelegate = self
+            
+            present(alert, animated: true)
         }
     }
     
@@ -137,8 +142,13 @@ extension CreateReminderViewController: UIPopoverPresentationControllerDelegate 
 }
 
 
-extension CreateReminderViewController: SelectDogDelegate {
+extension CreateReminderViewController: SelectDogDelegate, SavingDelegate {
     func set(name: String) {
         self.selectedDogLabel.text = name
     }
+    
+    func dismiss() {
+        self.dismissWithAnimation()
+    }
 }
+

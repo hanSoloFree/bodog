@@ -16,7 +16,7 @@ class RandomFactViewController: UIViewController {
             self.label.text = fact
         }
         } else {
-            self.label.text = "Tap and hold to see a random fact!"
+            self.label.text = "Double tap to see a random fact!"
         }
     }
     

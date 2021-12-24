@@ -4,6 +4,7 @@ class RemindersViewController: UIViewController {
     
     
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var pendingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,18 @@ class RemindersViewController: UIViewController {
         }
     }
     
+    @IBAction func pendingButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let identifier = String(describing: PendingRemindersViewController.self)
+        guard let pendingRemindersViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? PendingRemindersViewController else { return }
+        
+        self.present(pendingRemindersViewController, animated: true)
+    }
+    
+    
     func setCornerRadiuses() {
         self.addButton.layer.cornerRadius = 10
+        self.pendingButton.layer.cornerRadius = 10
     }
     
     private func setupNavBar() {

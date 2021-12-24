@@ -21,6 +21,9 @@
 		048FF67C2775FB0500956EA8 /* RandomFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF67B2775FB0500956EA8 /* RandomFactViewController.swift */; };
 		048FF6802776031A00956EA8 /* reminderSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 048FF67F2776031A00956EA8 /* reminderSound.mp3 */; };
 		048FF6832776045E00956EA8 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF6822776045E00956EA8 /* Fact.swift */; };
+		048FF6852776171E00956EA8 /* PendingRemindersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF6842776171E00956EA8 /* PendingRemindersViewController.swift */; };
+		048FF68C2776225700956EA8 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FF68A2776225700956EA8 /* ReminderTableViewCell.swift */; };
+		048FF68D2776225700956EA8 /* ReminderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048FF68B2776225700956EA8 /* ReminderTableViewCell.xib */; };
 		049AA37E27722A4700A35E6E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049AA37D27722A4700A35E6E /* DetailsViewController.swift */; };
 		049CFCFD277322D000768DFE /* DogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CFCFB277322D000768DFE /* DogCollectionViewCell.swift */; };
 		049CFCFE277322D000768DFE /* DogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049CFCFC277322D000768DFE /* DogCollectionViewCell.xib */; };
@@ -67,6 +70,9 @@
 		048FF67B2775FB0500956EA8 /* RandomFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomFactViewController.swift; sourceTree = "<group>"; };
 		048FF67F2776031A00956EA8 /* reminderSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminderSound.mp3; sourceTree = "<group>"; };
 		048FF6822776045E00956EA8 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		048FF6842776171E00956EA8 /* PendingRemindersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRemindersViewController.swift; sourceTree = "<group>"; };
+		048FF68A2776225700956EA8 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		048FF68B2776225700956EA8 /* ReminderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReminderTableViewCell.xib; sourceTree = "<group>"; };
 		049AA37D27722A4700A35E6E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		049CFCFB277322D000768DFE /* DogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogCollectionViewCell.swift; sourceTree = "<group>"; };
 		049CFCFC277322D000768DFE /* DogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DogCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -152,6 +158,24 @@
 				048FF67B2775FB0500956EA8 /* RandomFactViewController.swift */,
 			);
 			path = RandomFact;
+			sourceTree = "<group>";
+		};
+		048FF6862776185100956EA8 /* Pending */ = {
+			isa = PBXGroup;
+			children = (
+				048FF6842776171E00956EA8 /* PendingRemindersViewController.swift */,
+				048FF6872776221900956EA8 /* Cell */,
+			);
+			path = Pending;
+			sourceTree = "<group>";
+		};
+		048FF6872776221900956EA8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				048FF68A2776225700956EA8 /* ReminderTableViewCell.swift */,
+				048FF68B2776225700956EA8 /* ReminderTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		049AA37A277229FA00A35E6E /* Details */ = {
@@ -261,6 +285,7 @@
 				049CFD042773546600768DFE /* RealmModel */,
 				046D3C5927727551004C7A91 /* JSONModels */,
 				7EEB9DDF2750EA66000134B1 /* Main */,
+				048FF67A2775FAE500956EA8 /* RandomFact */,
 				7E2F952E274BA86100A6B710 /* Reminders */,
 				7E2F950C2744E6DB00A6B710 /* Garden */,
 				7E2F952927478A3F00A6B710 /* Search */,
@@ -280,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				7E2F95082744DF8800A6B710 /* GardenViewController.swift */,
-				048FF67A2775FAE500956EA8 /* RandomFact */,
 				049CFCFA277322A800768DFE /* Cell */,
 			);
 			path = Garden;
@@ -330,6 +354,7 @@
 			children = (
 				7E2F952F274BA89800A6B710 /* RemindersViewController.swift */,
 				049FFAE12774945C00E6BC13 /* Addition */,
+				048FF6862776185100956EA8 /* Pending */,
 			);
 			path = Reminders;
 			sourceTree = "<group>";
@@ -406,6 +431,7 @@
 				7E2F95012743DF6500A6B710 /* LaunchScreen.storyboard in Resources */,
 				7E2F94FE2743DF6500A6B710 /* Assets.xcassets in Resources */,
 				049CFCFE277322D000768DFE /* DogCollectionViewCell.xib in Resources */,
+				048FF68D2776225700956EA8 /* ReminderTableViewCell.xib in Resources */,
 				048FF6802776031A00956EA8 /* reminderSound.mp3 in Resources */,
 				0416EBC62772069500811973 /* SearchCollectionViewCell.xib in Resources */,
 				7E2F94FC2743DF6200A6B710 /* Main.storyboard in Resources */,
@@ -470,6 +496,8 @@
 				0416EBAD2771E81A00811973 /* SearchPopoverViewController.swift in Sources */,
 				046D3C67277275E3004C7A91 /* List.swift in Sources */,
 				049FFAE72774AF4000E6BC13 /* SelectDogDelegate.swift in Sources */,
+				048FF6852776171E00956EA8 /* PendingRemindersViewController.swift in Sources */,
+				048FF68C2776225700956EA8 /* ReminderTableViewCell.swift in Sources */,
 				0416EBC827720ABD00811973 /* ImageManager.swift in Sources */,
 				049CFCFD277322D000768DFE /* DogCollectionViewCell.swift in Sources */,
 				7E2F95172744FC7E00A6B710 /* CustomTabBarView.swift in Sources */,
