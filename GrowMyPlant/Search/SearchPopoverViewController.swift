@@ -27,7 +27,7 @@ class SearchPopoverViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         containerView.layer.cornerRadius = 20
-        backButton.layer.cornerRadius = 8
+        backButton.layer.cornerRadius = 5
     }
     
     override func viewDidAppear(_ animated: Bool) {

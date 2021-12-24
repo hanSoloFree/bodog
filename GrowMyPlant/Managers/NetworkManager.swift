@@ -15,4 +15,12 @@ struct NetworkManager {
         }
     }
     
+    func requestFact(completion: @escaping((String) -> ())) {
+        let url = "https://dog-api.kinduff.com/api/facts?number=1"
+        AF.request(url).responseDecodable(of: Fact.self) { responce in
+            guard let value = responce.value else { return }
+            guard let fact = value.facts?.first else { return }
+            completion(fact)
+        }
+    }
 }

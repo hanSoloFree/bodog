@@ -11,8 +11,21 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        showHint()
         self.selectedIndex = 1
         setupHomeButton()
+    }
+    
+    @objc private func handleMoveToHome(sender: UIButton) {
+        self.selectedIndex = 1
+    }
+    
+    @objc func showFact() {
+        let randomFactViewController = createFactViewController()
+        
+        randomFactViewController.showFact = true
+        
+        self.present(randomFactViewController, animated: true)
     }
     
     private func setupHomeButton() {
@@ -23,13 +36,44 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         homeButton.layer.cornerRadius = homeButton.frame.width / 2.6
         homeButton.backgroundColor = .clear
         self.tabBar.addSubview(homeButton)
+        
         homeButton.addTarget(self, action: #selector(handleMoveToHome), for: .touchUpInside)
+        
+        let tapAndHold = UILongPressGestureRecognizer(target: self, action: #selector(showFact))
+        homeButton.addGestureRecognizer(tapAndHold)
+        
         homeButton.clipsToBounds = true
         self.view.layoutIfNeeded()
     }
     
-    @objc private func handleMoveToHome(sender: UIButton) {
-        self.selectedIndex = 1
+    func createFactViewController() -> RandomFactViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let identifier = String(describing: RandomFactViewController.self)
+        guard let randomFactViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? RandomFactViewController else { return RandomFactViewController() }
+        
+        randomFactViewController.modalPresentationStyle = .popover
+        
+        let popOverViewContoller = randomFactViewController.popoverPresentationController
+        popOverViewContoller?.delegate = self
+        
+        popOverViewContoller?.sourceView = self.view
+        popOverViewContoller?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.maxY - 100, width: 0, height: 0)
+        randomFactViewController.preferredContentSize = CGSize(width: 200, height: 100)
+        
+        return randomFactViewController
     }
     
+    func showHint() {
+        let deadline = DispatchTime.now() + Double.random(in: 2...5)
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            let randomFactViewController = self.createFactViewController()
+            self.present(randomFactViewController, animated: true)
+        }
+    }
+}
+
+extension TabBarController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        .none
+    }
 }

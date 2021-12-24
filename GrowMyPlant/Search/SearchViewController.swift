@@ -6,6 +6,7 @@ class SearchViewController: UIViewController {
     
    override func viewDidLoad() {
         super.viewDidLoad()
+              
         extendedLayoutIncludesOpaqueBars = true
         setupNavBar()
     }

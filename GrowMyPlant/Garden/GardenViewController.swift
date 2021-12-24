@@ -2,24 +2,11 @@ import UIKit
 
 class GardenViewController: UIViewController, RemoveCellDelegate {
     
-    var dogs: [SavedDog]? {
-        didSet {
-            if let dogs = self.dogs {
-                if !dogs.isEmpty {
-                    navigationItem.title = "My Dogs: \(dogs.count)"
-                } else {
-                    navigationItem.title = "My Dogs"
-                }
-            } else {
-                navigationItem.title = "My Dogs"
-            }
-        }
-    }
+    var dogs: [SavedDog]?
     
     var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
-    
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var dogsLabel: UILabel!
@@ -29,6 +16,7 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         setupCollectionView()
         loadData()
         setupNavBar()
@@ -68,6 +56,7 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
     }
     
     private func setupNavBar() {
+        navigationItem.title = "My Dogs"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem?.imageInsets = .init(top: 6, left: 0, bottom: 0, right: 0)
         
@@ -83,16 +72,6 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
         navigationController?.navigationBar.standardAppearance = navBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
         self.navigationController?.navigationBar.setNeedsLayout()
-        
-        if let dogs = self.dogs {
-            if !dogs.isEmpty {
-                navigationItem.title = "My Dogs: \(dogs.count)"
-            } else {
-                navigationItem.title = "My Dogs"
-            }
-        } else {
-            navigationItem.title = "My Dogs"
-        }
     }
 }
 
