@@ -1,10 +1,6 @@
 import UIKit
-import UserNotifications
 
 class CreateReminderViewController: UIViewController {
-    
-    let notificationCenter = UNUserNotificationCenter.current()
-    
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var descriptionTextField: UITextField!
@@ -16,7 +12,7 @@ class CreateReminderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        allowNotifications()
+        requestAuthorization()
         setupGestures()
     }
     
@@ -36,10 +32,9 @@ class CreateReminderViewController: UIViewController {
             guard let title = selectedDogLabel.text else { return }
             guard let body = descriptionTextField.text else { return }
             
-            addNotification(title: title, body: body)
+            NotificationManager.shared.addNotification(title: title, body: body, date: self.datePicker.date)
             
             dismissWithAnimation()
-            
         }
     }
     
@@ -61,14 +56,33 @@ class CreateReminderViewController: UIViewController {
         self.present(dogSelectorViewController, animated: true)
     }
     
-    func allowNotifications() {
-        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+    func requestAuthorization() {
+        NotificationManager.shared.requestAuthorization { granted in
+            if !granted {
+                self.pushSettingsAlert()
+            }
+        }
+    }
+    
+    func pushSettingsAlert() {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: "Enable notifications!", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
             
-            self.notificationCenter.getNotificationSettings { settings in
-                if settings.authorizationStatus != .authorized {
-                    print(false)
+            let goToSettings = UIAlertAction(title: "Settings", style: .default) { _ in
+                guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+                self.dismiss(animated: false)
+                if UIApplication.shared.canOpenURL(settingsURL) {
+                    UIApplication.shared.open(settingsURL)
                 }
             }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.dismissWithAnimation()
+            }
+            
+            alertController.addAction(goToSettings)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -91,29 +105,6 @@ class CreateReminderViewController: UIViewController {
         selectGesture.numberOfTapsRequired = 1
         self.selectedDogLabel.isUserInteractionEnabled = true
         self.selectedDogLabel.addGestureRecognizer(selectGesture)
-    }
-    
-    func addNotification(title: String, body: String) {
-        
-        let notificationDate = self.datePicker.date
-        
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = UNNotificationSound.default
-        
-        
-        let components = Calendar.current.dateComponents([.hour, .minute], from: notificationDate)
-        
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components,
-                                                    repeats: false)
-        
-        let request = UNNotificationRequest(identifier: title,
-                                            content: content,
-                                            trigger: trigger)
-        
-        notificationCenter.add(request, withCompletionHandler: nil)
     }
 }
 

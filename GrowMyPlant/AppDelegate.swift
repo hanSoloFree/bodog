@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = navVC
         self.window?.makeKeyAndVisible()
+                
         
         configureUserNotifications()
         return true

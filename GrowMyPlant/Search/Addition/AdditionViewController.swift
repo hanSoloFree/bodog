@@ -32,7 +32,6 @@ class AdditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefaults()
-        print(self.nameTextField.text)
     }
     
     override func viewDidLayoutSubviews() {

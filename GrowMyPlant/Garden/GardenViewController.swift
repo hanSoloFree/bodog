@@ -39,6 +39,8 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
         loadData()
     }
     
+    
+    
     func loadData() {
         self.dogs = DataManager.shared.get()
         self.collectionView.reloadData()
