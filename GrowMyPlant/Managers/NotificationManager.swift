@@ -19,7 +19,7 @@ struct NotificationManager {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "reminderSound.mp3"))
         
         
         let components = Calendar.current.dateComponents([.hour, .minute], from: notificationDate)

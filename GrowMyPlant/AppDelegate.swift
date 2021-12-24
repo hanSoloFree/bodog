@@ -36,6 +36,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     willPresent notification: UNNotification,
     withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void
   ) {
-    completionHandler(.banner)
+      completionHandler([.banner, .sound])
   }
 }
