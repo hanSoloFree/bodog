@@ -15,7 +15,7 @@ class DogCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var removeImageView: UIImageView!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
-    @IBOutlet weak var statusImageView: UIImageView!
+    @IBOutlet weak var spayelLabel: UILabel!
     @IBOutlet weak var birthDateAndAgeLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     
@@ -60,11 +60,23 @@ class DogCollectionViewCell: UICollectionViewCell {
             self.genderLabel.text = "Female"
         }
         
+        var status = ""
         if info.spayed {
-            self.statusImageView.image = UIImage(named: "noEggs")
+            self.spayelLabel.textColor = CustomColors.darkRed
+            if info.genderSegmentIndex == 0 {
+                status = "Spayed"
+            } else {
+                status = "Sterilized"
+            }
         } else {
-            self.statusImageView.image = UIImage(named: "eggs")
+            self.spayelLabel.textColor = CustomColors.darkGreen
+            if info.genderSegmentIndex == 0 {
+                status = "Not spayed"
+            } else {
+                status = "Not sterilized"
+            }
         }
+        self.spayelLabel.text = status
                 
         let calendar = Calendar.current
         let formatter = DateFormatter()
