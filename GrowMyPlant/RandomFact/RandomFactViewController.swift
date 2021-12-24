@@ -16,6 +16,8 @@ class RandomFactViewController: UIViewController {
             self.label.text = fact
         }
         } else {
+            self.label.font = UIFont(name: "Courier New Bold", size: 18)
+            self.label.textAlignment = .center
             self.label.text = "Double tap to see a random fact!"
         }
     }
