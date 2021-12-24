@@ -9,8 +9,7 @@ class DogCollectionViewCell: UICollectionViewCell {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
-    @IBOutlet weak var selectedCellNameContainerView: UIView!
-    @IBOutlet weak var selectdCellNameLabel: UILabel!
+    @IBOutlet weak var dogName: UILabel!
     @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var removeImageView: UIImageView!
@@ -46,7 +45,7 @@ class DogCollectionViewCell: UICollectionViewCell {
     func configure() {
         guard let info = object else { return }
 
-        self.selectdCellNameLabel.text = info.name
+        self.dogName.text = info.name
         
         let imagePath = info.imagePath
         if let image = load(fileName: imagePath) {
@@ -82,9 +81,9 @@ class DogCollectionViewCell: UICollectionViewCell {
         
         formatter.dateFormat = "MM-dd-yyyy"
         
-        let birtDate = formatter.string(from: firstDate)
+        let birtDate = formatter.string(from: firstDate).replacingOccurrences(of: "-", with: "/")
         
-        self.birthDateAndAgeLabel.text = "Born: \(birtDate)\nage: \(age)"
+        self.birthDateAndAgeLabel.text = "Born: \(birtDate)\nAge: \(age)"
         self.bioLabel.text = info.bio
     }
     
