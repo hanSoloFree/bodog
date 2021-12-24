@@ -16,6 +16,10 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var breedGroupLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     
+    @IBOutlet weak var topGestureZone: UIView!
+    @IBOutlet weak var bottomGestureZone: UIView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +50,24 @@ class DetailsViewController: UIViewController {
                 self.additionDelegate?.present(additionViewController: additionViewController)
             }
         }
-
-        
     }
+    
+    @objc func tappedTop() {
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true)
+        }
+    }
+    
+    @objc func tappedBottom() {
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true)
+        }
+    }
+    
     
     func setupDetails() {
         guard let details = details else { return }
@@ -87,13 +106,14 @@ class DetailsViewController: UIViewController {
     }
     
     func setupGesture() {
-        let tap =  UITapGestureRecognizer(target: self, action: #selector(tap))
-        self.view.addGestureRecognizer(tap)
+        let topGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTop))
+        topGesture.numberOfTapsRequired = 1
+        self.topGestureZone.isUserInteractionEnabled = true
+        self.topGestureZone.addGestureRecognizer(topGesture)
+        
+        let bottomGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBottom))
+        bottomGesture.numberOfTapsRequired = 1
+        self.bottomGestureZone.isUserInteractionEnabled = true
+        self.bottomGestureZone.addGestureRecognizer(bottomGesture)
     }
-    
-    @objc func tap() {
-        self.view.backgroundColor = .black.withAlphaComponent(0)
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }

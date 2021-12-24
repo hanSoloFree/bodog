@@ -441,18 +441,35 @@
                                     <constraint firstItem="yO1-SZ-df9" firstAttribute="top" secondItem="SZd-qg-P8l" secondAttribute="bottom" constant="16" id="z8m-ke-KZX"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJ2-jd-h6Y">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="192.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8lU-Pe-DOA">
+                                <rect key="frame" x="0.0" y="703.5" width="414" height="192.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FVh-0T-5KI"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8lU-Pe-DOA" firstAttribute="top" secondItem="PfD-IR-vrt" secondAttribute="bottom" id="1lf-Yt-P45"/>
                             <constraint firstItem="PfD-IR-vrt" firstAttribute="leading" secondItem="FVh-0T-5KI" secondAttribute="leading" constant="24" id="51h-L0-sCq"/>
+                            <constraint firstItem="PfD-IR-vrt" firstAttribute="top" secondItem="HJ2-jd-h6Y" secondAttribute="bottom" id="IEK-fa-lhR"/>
+                            <constraint firstItem="HJ2-jd-h6Y" firstAttribute="leading" secondItem="gvE-vt-G9I" secondAttribute="leading" id="Pmj-MP-Y2k"/>
+                            <constraint firstAttribute="trailing" secondItem="8lU-Pe-DOA" secondAttribute="trailing" id="Sih-Zr-IWK"/>
                             <constraint firstItem="FVh-0T-5KI" firstAttribute="trailing" secondItem="PfD-IR-vrt" secondAttribute="trailing" constant="24" id="XzF-G3-PN1"/>
+                            <constraint firstItem="8lU-Pe-DOA" firstAttribute="leading" secondItem="FVh-0T-5KI" secondAttribute="leading" id="YJy-38-Qo4"/>
+                            <constraint firstAttribute="bottom" secondItem="8lU-Pe-DOA" secondAttribute="bottom" id="ZVl-Y8-6ZG"/>
                             <constraint firstItem="PfD-IR-vrt" firstAttribute="centerX" secondItem="gvE-vt-G9I" secondAttribute="centerX" id="dXH-7O-j5p"/>
+                            <constraint firstItem="FVh-0T-5KI" firstAttribute="trailing" secondItem="HJ2-jd-h6Y" secondAttribute="trailing" id="e9r-xC-6jc"/>
                             <constraint firstItem="PfD-IR-vrt" firstAttribute="centerY" secondItem="gvE-vt-G9I" secondAttribute="centerY" id="nee-vg-lCh"/>
+                            <constraint firstItem="HJ2-jd-h6Y" firstAttribute="top" secondItem="gvE-vt-G9I" secondAttribute="top" id="oQt-eh-gCb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="Bks-eL-a8g" id="B8d-Fx-gVA"/>
+                        <outlet property="bottomGestureZone" destination="8lU-Pe-DOA" id="yxJ-vX-Avg"/>
                         <outlet property="bredForLabel" destination="Q3y-2E-HxG" id="OvW-2W-sB4"/>
                         <outlet property="breedGroupLabel" destination="U3T-7X-p9V" id="vxK-GB-oh8"/>
                         <outlet property="breedLabel" destination="yO1-SZ-df9" id="WZf-eh-oBq"/>
@@ -461,6 +478,7 @@
                         <outlet property="heightLabel" destination="d2u-kP-Fy9" id="G3C-SZ-ZKS"/>
                         <outlet property="lifeSpanLabel" destination="d2u-kP-Fy9" id="iLn-oY-v28"/>
                         <outlet property="temperamentLabel" destination="C2v-Ss-Vww" id="VFF-BO-oKF"/>
+                        <outlet property="topGestureZone" destination="HJ2-jd-h6Y" id="OJ6-Ax-Rr4"/>
                         <outlet property="weightLabel" destination="IBR-Sb-ONz" id="UvC-BS-CIC"/>
                     </connections>
                 </viewController>
@@ -651,23 +669,41 @@
                                     <constraint firstItem="kAr-i4-CGN" firstAttribute="top" secondItem="PGO-CI-WKz" secondAttribute="bottom" constant="24" id="yeB-ul-VfG"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAX-Th-017">
+                                <rect key="frame" x="0.0" y="44" width="414" height="243.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udA-aw-exw">
+                                <rect key="frame" x="0.0" y="608.5" width="414" height="253.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hzk-2v-qd3"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="SAX-Th-017" firstAttribute="leading" secondItem="hzk-2v-qd3" secondAttribute="leading" id="4Pa-ep-fj2"/>
+                            <constraint firstItem="SAX-Th-017" firstAttribute="top" secondItem="hzk-2v-qd3" secondAttribute="top" id="5xz-fS-BHY"/>
+                            <constraint firstItem="udA-aw-exw" firstAttribute="leading" secondItem="XZa-cC-kJK" secondAttribute="leading" id="ALH-Zp-Ybi"/>
                             <constraint firstItem="TPE-km-Bms" firstAttribute="leading" secondItem="hzk-2v-qd3" secondAttribute="leading" constant="24" id="WIB-9o-PEb"/>
+                            <constraint firstItem="udA-aw-exw" firstAttribute="top" secondItem="TPE-km-Bms" secondAttribute="bottom" id="Yif-o0-OTf"/>
+                            <constraint firstItem="hzk-2v-qd3" firstAttribute="bottom" secondItem="udA-aw-exw" secondAttribute="bottom" id="ZZp-Bk-QaS"/>
                             <constraint firstItem="hzk-2v-qd3" firstAttribute="trailing" secondItem="TPE-km-Bms" secondAttribute="trailing" constant="24" id="a4i-Oh-CiZ"/>
                             <constraint firstItem="TPE-km-Bms" firstAttribute="centerY" secondItem="XZa-cC-kJK" secondAttribute="centerY" id="bNO-ek-rIV"/>
+                            <constraint firstItem="TPE-km-Bms" firstAttribute="top" secondItem="SAX-Th-017" secondAttribute="bottom" id="kge-St-pHY"/>
+                            <constraint firstItem="hzk-2v-qd3" firstAttribute="trailing" secondItem="SAX-Th-017" secondAttribute="trailing" id="obT-gT-MS9"/>
                             <constraint firstItem="TPE-km-Bms" firstAttribute="centerX" secondItem="XZa-cC-kJK" secondAttribute="centerX" id="s0w-ht-fwq"/>
+                            <constraint firstItem="hzk-2v-qd3" firstAttribute="trailing" secondItem="udA-aw-exw" secondAttribute="trailing" id="vCy-5I-sWV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="udh-e1-9mZ" id="w62-R5-Ve3"/>
+                        <outlet property="bottomGestureZone" destination="udA-aw-exw" id="bYR-qq-OB8"/>
                         <outlet property="cancelButton" destination="SF7-eO-S7J" id="7oz-d8-9Sr"/>
                         <outlet property="containerView" destination="TPE-km-Bms" id="wiR-Ce-qkm"/>
                         <outlet property="datePicker" destination="PGO-CI-WKz" id="9tB-NY-ARK"/>
                         <outlet property="descriptionTextField" destination="XTB-UY-dBC" id="E9O-gC-U17"/>
                         <outlet property="selectedDogLabel" destination="nCX-uf-SEt" id="lNh-xG-NPx"/>
+                        <outlet property="topGestureZone" destination="SAX-Th-017" id="9Tx-pG-mUA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ku-jK-bvB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -980,19 +1016,36 @@
                                     <constraint firstItem="pQJ-EI-KRS" firstAttribute="centerX" secondItem="CBK-dk-060" secondAttribute="centerX" id="yZS-8R-HkK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJB-62-rv0">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="205.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pt6-tw-BFh">
+                                <rect key="frame" x="0.0" y="690.5" width="414" height="205.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sq3-tM-gBB"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pt6-tw-BFh" firstAttribute="leading" secondItem="sq3-tM-gBB" secondAttribute="leading" id="2VY-Ae-LGi"/>
                             <constraint firstItem="sq3-tM-gBB" firstAttribute="trailing" secondItem="Tcj-S5-Uy0" secondAttribute="trailing" constant="24" id="4Ol-19-E4j"/>
+                            <constraint firstItem="Tcj-S5-Uy0" firstAttribute="top" secondItem="XJB-62-rv0" secondAttribute="bottom" id="FPG-2r-ZwB"/>
+                            <constraint firstItem="pt6-tw-BFh" firstAttribute="top" secondItem="Tcj-S5-Uy0" secondAttribute="bottom" id="R1u-qK-oY8"/>
                             <constraint firstItem="Tcj-S5-Uy0" firstAttribute="leading" secondItem="sq3-tM-gBB" secondAttribute="leading" constant="24" id="Z2p-K5-oti"/>
+                            <constraint firstAttribute="bottom" secondItem="pt6-tw-BFh" secondAttribute="bottom" id="Ztm-mW-D0D"/>
+                            <constraint firstAttribute="trailing" secondItem="XJB-62-rv0" secondAttribute="trailing" id="aMi-zV-XY3"/>
                             <constraint firstItem="Tcj-S5-Uy0" firstAttribute="centerY" secondItem="Npd-Ru-HJK" secondAttribute="centerY" id="fZZ-l3-0Te"/>
                             <constraint firstItem="Tcj-S5-Uy0" firstAttribute="centerX" secondItem="Npd-Ru-HJK" secondAttribute="centerX" id="nVm-w3-gXy"/>
+                            <constraint firstItem="XJB-62-rv0" firstAttribute="top" secondItem="Npd-Ru-HJK" secondAttribute="top" id="vtf-jG-vPl"/>
+                            <constraint firstItem="XJB-62-rv0" firstAttribute="leading" secondItem="sq3-tM-gBB" secondAttribute="leading" id="y5d-D6-ZBf"/>
+                            <constraint firstAttribute="trailing" secondItem="pt6-tw-BFh" secondAttribute="trailing" id="zML-HN-hPl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bioTextField" destination="1Ec-Au-YAF" id="w4Q-Rh-WGm"/>
                         <outlet property="birthDatePicker" destination="9h7-ut-XoH" id="ylX-WR-Hw3"/>
+                        <outlet property="bottomGestureZone" destination="pt6-tw-BFh" id="QP7-Ez-8GB"/>
                         <outlet property="breedLabel" destination="9j7-dS-rgb" id="Ojn-sB-D7N"/>
                         <outlet property="cancelButton" destination="z8e-Xw-Vae" id="Qlv-WB-CKN"/>
                         <outlet property="clearAllButton" destination="lTj-LE-5Mf" id="0qx-Cz-PmF"/>
@@ -1004,6 +1057,7 @@
                         <outlet property="saveButton" destination="Dey-hR-Zez" id="6Kv-Wa-aqi"/>
                         <outlet property="setDefaultPhotoLabel" destination="9gU-Th-6Ph" id="q5r-Ww-0s8"/>
                         <outlet property="spayedSwitch" destination="Iit-qM-Kzj" id="UIS-bY-UUr"/>
+                        <outlet property="topGestureZone" destination="XJB-62-rv0" id="0Hd-8H-Hx5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrL-vR-gRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

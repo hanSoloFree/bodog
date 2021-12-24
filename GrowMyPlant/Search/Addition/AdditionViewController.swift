@@ -28,7 +28,9 @@ class AdditionViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var clearAllButton: UIButton!
     
-
+    @IBOutlet weak var topGestureZone: UIView!
+    @IBOutlet weak var bottomGestureZone: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefaults()
@@ -72,11 +74,7 @@ class AdditionViewController: UIViewController {
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.15) {
-            self.view.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
+        dismissWithAnimation()
     }
     
     @IBAction func clearAllButtonPressed(_ sender: UIButton) {
@@ -103,6 +101,42 @@ class AdditionViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+
+    @objc func setDefaultImage() {
+        if let defaultImage = defaultImage {
+            self.dogImageView.image = defaultImage
+            self.dogImageFrameView.backgroundColor = .white
+            
+            self.newImageSet = true
+        }
+    }
+    
+    @objc func setImage() {
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.selectionLimit = 1
+        config.filter = .images
+        
+        let photoPickerViewController = PHPickerViewController(configuration: config)
+        photoPickerViewController.delegate = self
+        
+        present(photoPickerViewController, animated: true)
+    }
+    
+    @objc func tappedTop()  {
+        dismissWithAnimation()
+    }
+    
+    @objc func tappedBottom()  {
+        dismissWithAnimation()
+    }
+    
+    func dismissWithAnimation() {
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
     
     private func save(image: UIImage, fileName: String) -> String? {
         let fileName = fileName
@@ -124,6 +158,10 @@ class AdditionViewController: UIViewController {
         
         self.spayedSwitch.isOn = false
         
+        setupGestures()
+    }
+    
+    func setupGestures() {
         let setDefaultImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(setDefaultImage))
         self.setDefaultPhotoLabel.isUserInteractionEnabled = true
         self.setDefaultPhotoLabel.addGestureRecognizer(setDefaultImageTapGesture)
@@ -133,6 +171,15 @@ class AdditionViewController: UIViewController {
         self.dogImageView.isUserInteractionEnabled = true
         self.dogImageView.addGestureRecognizer(setImageTapGesture)
         
+        let topGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTop))
+        topGesture.numberOfTapsRequired = 1
+        self.topGestureZone.isUserInteractionEnabled = true
+        self.topGestureZone.addGestureRecognizer(topGesture)
+        
+        let bottomGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBottom))
+        bottomGesture.numberOfTapsRequired = 1
+        self.bottomGestureZone.isUserInteractionEnabled = true
+        self.bottomGestureZone.addGestureRecognizer(bottomGesture)
     }
     
     func setCornerRadiuses() {
@@ -145,26 +192,6 @@ class AdditionViewController: UIViewController {
         self.saveButton.layer.cornerRadius = buttonCornerRadius
         self.cancelButton.layer.cornerRadius = buttonCornerRadius
         self.clearAllButton.layer.cornerRadius = buttonCornerRadius
-    }
-    
-    @objc func setDefaultImage() {
-        if let defaultImage = defaultImage {
-            self.dogImageView.image = defaultImage
-            self.dogImageFrameView.backgroundColor = .white
-            
-            self.newImageSet = true
-        }
-    }
-    
-    @objc func setImage() {
-        var config = PHPickerConfiguration(photoLibrary: .shared())
-        config.selectionLimit = 1
-        config.filter = .images
-        
-        let photoPickerViewController = PHPickerViewController(configuration: config)
-        photoPickerViewController.delegate = self
-        
-        present(photoPickerViewController, animated: true)
     }
 }
 

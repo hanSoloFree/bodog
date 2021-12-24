@@ -9,6 +9,10 @@ class CreateReminderViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    @IBOutlet weak var topGestureZone: UIView!
+    @IBOutlet weak var bottomGestureZone: UIView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +58,14 @@ class CreateReminderViewController: UIViewController {
         dogSelectorViewController.selectionDelegate = self
         
         self.present(dogSelectorViewController, animated: true)
+    }
+    
+    @objc func tappedTop()  {
+        dismissWithAnimation()
+    }
+    
+    @objc func tappedBottom()  {
+        dismissWithAnimation()
     }
     
     func requestAuthorization() {
@@ -105,6 +117,16 @@ class CreateReminderViewController: UIViewController {
         selectGesture.numberOfTapsRequired = 1
         self.selectedDogLabel.isUserInteractionEnabled = true
         self.selectedDogLabel.addGestureRecognizer(selectGesture)
+        
+        let topGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTop))
+        topGesture.numberOfTapsRequired = 1
+        self.topGestureZone.isUserInteractionEnabled = true
+        self.topGestureZone.addGestureRecognizer(topGesture)
+        
+        let bottomGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBottom))
+        bottomGesture.numberOfTapsRequired = 1
+        self.bottomGestureZone.isUserInteractionEnabled = true
+        self.bottomGestureZone.addGestureRecognizer(bottomGesture)
     }
 }
 
