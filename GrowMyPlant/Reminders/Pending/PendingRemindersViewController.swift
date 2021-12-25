@@ -22,9 +22,6 @@ class PendingRemindersViewController: UIViewController {
         NotificationManager.shared.getPendingNotifications { contents in
             self.reminders = contents
         }
-                
-        let height = self.tableView.frame.height + self.mainLabel.frame.height + self.swipeLabel.frame.height + 40
-        preferredContentSize = CGSize(width: self.tableView.frame.width, height: height)
         
         let cellName = String(describing: ReminderTableViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
@@ -64,6 +61,8 @@ class PendingRemindersViewController: UIViewController {
         if reminders.isEmpty {
             self.sadDogImageView.isHidden = false
             self.noRemindersLabel.isHidden = false
+        } else {
+            self.swipeLabel.isHidden = false
         }
     }
     
@@ -99,8 +98,9 @@ extension PendingRemindersViewController: UITableViewDataSource {
 }
 
 extension PendingRemindersViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
