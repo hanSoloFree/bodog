@@ -30,8 +30,9 @@ class RemoveAlertViewController: UIViewController {
     }
     
     func setCornerRadiuses() {
-        self.containerView.layer.cornerRadius = 10
-        self.cancelButton.layer.cornerRadius = 10
-        self.removeButton.layer.cornerRadius = 10
+        let radius = 10.0
+        self.containerView.layer.cornerRadius = radius
+        self.cancelButton.layer.cornerRadius = radius
+        self.removeButton.layer.cornerRadius = radius
     }
 }

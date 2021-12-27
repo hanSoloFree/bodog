@@ -17,9 +17,7 @@ class CustomTabBarView: UITabBar {
         shapeLayer.fillColor = CustomColors.darkGray.cgColor
         shapeLayer.lineWidth = 1.0
         shapeLayer.shadowOffset = CGSize(width: 0, height: 0)
-//        shapeLayer.shadowRadius = 10
         shapeLayer.shadowColor = UIColor.lightGray.cgColor
-//        shapeLayer.shadowOpacity = 0.6r
         
         if let oldShapeLayer = self.shapeLayer {
             self.layer.replaceSublayer(oldShapeLayer, with: shapeLayer)

@@ -59,7 +59,10 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         popOverViewContoller?.delegate = self
         
         popOverViewContoller?.sourceView = self.view
-        popOverViewContoller?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.maxY - 100, width: 0, height: 0)
+        popOverViewContoller?.sourceRect = CGRect(x: self.view.bounds.midX,
+                                                  y: self.view.bounds.maxY - 100,
+                                                  width: 0,
+                                                  height: 0)
         randomFactViewController.preferredContentSize = CGSize(width: 180, height: 120)
         return randomFactViewController
     }

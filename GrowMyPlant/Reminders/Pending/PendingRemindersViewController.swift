@@ -17,7 +17,7 @@ class PendingRemindersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         getPendingReminders()
         setupGesture()
         let cellName = String(describing: ReminderTableViewCell.self)
@@ -31,19 +31,11 @@ class PendingRemindersViewController: UIViewController {
     }
     
     @objc private func tappedTop() {
-        UIView.animate(withDuration: 0.15) {
-            self.view.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true)
-        }
+        dismissAnimated()
     }
     
     @objc private func tappedBottom() {
-        UIView.animate(withDuration: 0.15) {
-            self.view.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true)
-        }
+        dismissAnimated()
     }
     
     private func getPendingReminders() {
@@ -61,6 +53,14 @@ class PendingRemindersViewController: UIViewController {
                     self.tableView.isHidden = false
                 }
             }
+        }
+    }
+    
+    private func dismissAnimated() {
+        UIView.animate(withDuration: 0.15) {
+            self.view.backgroundColor = .clear
+        } completion: { _ in
+            self.dismiss(animated: true)
         }
     }
     
@@ -92,7 +92,7 @@ extension PendingRemindersViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ReminderTableViewCell else { return UITableViewCell() }
         
         let reminder = reminders[indexPath.row]
-        let date = reminder.userInfo["date"] as! String 
+        let date = reminder.userInfo["date"] as! String
         
         cell.configureWith(name: reminder.title, description: reminder.body, date: date)
         

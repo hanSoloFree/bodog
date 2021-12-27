@@ -40,7 +40,7 @@ class DogsViewController: UIViewController, RemoveCellDelegate {
     }
     
     func reloadData(completion: @escaping(() -> Void)) {
-        let alert = AlertService.shared.removeAlert("You sure you want to remove this pretty dog? :(") {
+        let alert = AlertService.shared.removeAlert(Constants.removeDog) {
             completion()
             self.dogs = DataManager.shared.get()
             self.collectionView.reloadData()

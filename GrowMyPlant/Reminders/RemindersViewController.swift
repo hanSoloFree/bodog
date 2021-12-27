@@ -34,7 +34,7 @@ class RemindersViewController: UIViewController {
                 }
             }
         } else {
-            let alert = AlertService.shared.alert("You don't have any dogs to add a reminder :(")
+            let alert = AlertService.shared.alert(Constants.remindersUnable)
             present(alert, animated: true)
         }
     }

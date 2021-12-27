@@ -12,17 +12,15 @@ struct NetworkManager {
     
     func requestListOfBreeds(completion: @escaping(([List]) -> ())) {
         
-        let url = "https://api.thedogapi.com/v1/breeds"
-        
-        AF.request(url).responseDecodable(of: [List].self) { responce in
+        AF.request(Constants.breedURL).responseDecodable(of: [List].self) { responce in
             guard let value = responce.value else { return }
             completion(value)
         }
     }
     
     func requestFact(completion: @escaping((String) -> ())) {
-        let url = "https://dog-api.kinduff.com/api/facts?number=1"
-        AF.request(url).responseDecodable(of: Fact.self) { responce in
+        
+        AF.request(Constants.factURL).responseDecodable(of: Fact.self) { responce in
             guard let value = responce.value else { return }
             guard let fact = value.facts?.first else { return }
             completion(fact)

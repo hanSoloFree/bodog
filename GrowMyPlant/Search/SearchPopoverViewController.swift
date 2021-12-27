@@ -43,7 +43,7 @@ class SearchPopoverViewController: UIViewController {
         self.activityIndicator.stopAnimating()
         
         self.sadDogImageView.isHidden = loaded
-        self.noInformationLabel.text = "No information were loaded :(\nCheck you'r internet connection, or try to reload."
+        self.noInformationLabel.text = Constants.noInternet
         self.noInformationLabel.isHidden = loaded
     }
     
@@ -64,6 +64,14 @@ class SearchPopoverViewController: UIViewController {
                     self.infoIs(loaded: true)
                 }
                 self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func presentAnimated(_ vc: UIViewController) {
+        present(vc, animated: true) {
+            UIView.animate(withDuration: 0.15) {
+                vc.view.backgroundColor = .black.withAlphaComponent(0.6)
             }
         }
     }
@@ -98,8 +106,8 @@ extension SearchPopoverViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell()}
+        let identifier = String(describing: SearchCollectionViewCell.self)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell()}
         let info = self.filteredList[indexPath.item]
         cell.configure(with: info)
         return cell
@@ -120,11 +128,7 @@ extension SearchPopoverViewController: UICollectionViewDelegate {
         detailsViewController.additionDelegate = self
         
         detailsViewController.modalPresentationStyle = .overFullScreen
-        present(detailsViewController, animated: true) {
-            UIView.animate(withDuration: 0.15) {
-                detailsViewController.view.backgroundColor = .black.withAlphaComponent(0.6)
-            }
-        }
+        presentAnimated(detailsViewController)
     }
 }
 
@@ -139,18 +143,12 @@ extension SearchPopoverViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
 }
 
 extension SearchPopoverViewController: AdditionDelegate {
-    func present(additionViewController: AdditionViewController) {
-        present(additionViewController, animated: true) {
-            UIView.animate(withDuration: 0.15) {
-                additionViewController.view.backgroundColor = .black.withAlphaComponent(0.6)
-            }
-        }
+    func present(_ additionViewController: AdditionViewController) {
+        presentAnimated(additionViewController)
     } 
 }

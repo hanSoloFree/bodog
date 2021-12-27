@@ -30,13 +30,20 @@ class DogCollectionViewCell: UICollectionViewCell {
         setCornerRadiuses()
     }
     
-    func setupGesture() {
+    @objc private func remove() {
+        guard let object = object else { return }
+        removeDelegate?.reloadData(completion: {
+            DataManager.shared.deleteSelected(object: object)
+        })
+    }
+    
+    private func setupGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(remove))
         removeImageView.isUserInteractionEnabled = true
         removeImageView.addGestureRecognizer(tap)
     }
     
-    func setCornerRadiuses() {
+    private func setCornerRadiuses() {
         self.imageContainerView.layer.cornerRadius = self.imageContainerView.frame.width / 2
         self.imageView.layer.cornerRadius = self.imageView.frame.width / 2
     }
@@ -105,15 +112,7 @@ class DogCollectionViewCell: UICollectionViewCell {
             let imageData = try Data(contentsOf: fileURL)
             return UIImage(data: imageData)
         } catch {
-            print("Error loading image : \(error)")
             return nil
         }
-    }
-    
-    @objc private func remove() {
-        guard let object = object else { return }
-        removeDelegate?.reloadData(completion: {
-            DataManager.shared.deleteSelected(object: object)
-        })
     }
 }

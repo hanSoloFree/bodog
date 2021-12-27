@@ -40,6 +40,7 @@
 		049FFAE32774947A00E6BC13 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FFAE22774947A00E6BC13 /* CreateReminderViewController.swift */; };
 		049FFAE52774A7E100E6BC13 /* DogSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FFAE42774A7E100E6BC13 /* DogSelectorTableViewController.swift */; };
 		049FFAE72774AF4000E6BC13 /* SelectDogDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FFAE62774AF4000E6BC13 /* SelectDogDelegate.swift */; };
+		04CB2E7F277A412100EEF49D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CB2E7E277A412100EEF49D /* Constants.swift */; };
 		680659C48504C75F91E9B6A8 /* Pods_GrowMyPlant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D978912FE9DFF8EBC328CC7D /* Pods_GrowMyPlant.framework */; };
 		7E2F94F52743DF6200A6B710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F42743DF6200A6B710 /* AppDelegate.swift */; };
 		7E2F94F92743DF6200A6B710 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */; };
@@ -89,6 +90,7 @@
 		049FFAE22774947A00E6BC13 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
 		049FFAE42774A7E100E6BC13 /* DogSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSelectorTableViewController.swift; sourceTree = "<group>"; };
 		049FFAE62774AF4000E6BC13 /* SelectDogDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDogDelegate.swift; sourceTree = "<group>"; };
+		04CB2E7E277A412100EEF49D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7E2F94F12743DF6200A6B710 /* GrowMyPlant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowMyPlant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2F94F42743DF6200A6B710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				7E2F94F82743DF6200A6B710 /* CustomNavigationController.swift */,
 				7E2F950E2744E70700A6B710 /* CustomColors.swift */,
 				0416EBAA2771DAF300811973 /* ExtensionUIView.swift */,
+				04CB2E7E277A412100EEF49D /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049CFD062773548000768DFE /* SavedDog.swift in Sources */,
+				04CB2E7F277A412100EEF49D /* Constants.swift in Sources */,
 				046D3C66277275E3004C7A91 /* Height.swift in Sources */,
 				046D3C68277275E3004C7A91 /* Image.swift in Sources */,
 				0416EBAF2771EF2700811973 /* NetworkManager.swift in Sources */,

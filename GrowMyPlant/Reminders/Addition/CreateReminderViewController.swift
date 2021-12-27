@@ -38,7 +38,7 @@ class CreateReminderViewController: UIViewController {
             
             NotificationManager.shared.addNotification(title: title, body: body, date: self.datePicker.date)
                 
-            let alert = AlertService.shared.alert("Reminder was added!")
+            let alert = AlertService.shared.alert(Constants.reminderAdded)
             alert.savingDelegate = self
             
             present(alert, animated: true)
@@ -81,7 +81,7 @@ class CreateReminderViewController: UIViewController {
     
     private func pushSettingsAlert() {
         DispatchQueue.main.async {
-            let alertController = UIAlertController(title: "Enable notifications!", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
+            let alertController = UIAlertController(title: Constants.notificationAlertTitle, message: Constants.notificationAlertMessage, preferredStyle: .alert)
             
             let goToSettings = UIAlertAction(title: "Settings", style: .default) { _ in
                 guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }

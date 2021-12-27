@@ -42,28 +42,27 @@ class DetailsViewController: UIViewController {
         additionViewController.defaultImage = dogImageView.image
         additionViewController.defaultBreed = breedLabel.text
         
-        UIView.animate(withDuration: 0.15) {
-            self.view.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true) {
-                self.additionDelegate?.present(additionViewController: additionViewController)
-            }
+        dismissAnimated {
+            self.additionDelegate?.present(additionViewController)
         }
     }
     
     @objc private func tappedTop() {
-        UIView.animate(withDuration: 0.15) {
-            self.view.backgroundColor = .clear
-        } completion: { _ in
-            self.dismiss(animated: true)
-        }
+        dismissAnimated(completion: nil)
     }
     
     @objc private func tappedBottom() {
+        dismissAnimated(completion: nil)
+    }
+    
+    private func dismissAnimated(completion: (()->())?) {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
-            self.dismiss(animated: true)
+            self.dismiss(animated: true) {
+                guard completion != nil else { return }
+                completion!()
+            }
         }
     }
     

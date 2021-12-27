@@ -62,11 +62,11 @@ class AdditionViewController: UIViewController {
             object.spayed = self.spayedSwitch.isOn
             
             if DataManager.shared.save(object: object) {
-                let alert = AlertService.shared.alert("Saved!")
+                let alert = AlertService.shared.alert(Constants.saved)
                 alert.savingDelegate = self
                 self.present(alert, animated: true)
             } else {
-                let alert = AlertService.shared.alert("You have already saved this dog!\nCheck for information you've typed!")
+                let alert = AlertService.shared.alert(Constants.dogAlreadySaved)
                 self.present(alert, animated: true)
             }
             
@@ -97,7 +97,7 @@ class AdditionViewController: UIViewController {
             
             self.newImageSet = false
             
-            let alert = AlertService.shared.alert("Cleaned")
+            let alert = AlertService.shared.alert(Constants.cleaned)
             present(alert, animated: true)
         }
     }
@@ -145,7 +145,6 @@ class AdditionViewController: UIViewController {
             try? imageData.write(to: fileURL, options: .atomic)
             return fileName
         } else {
-            print("Error saving image")
             return nil
         }
     }

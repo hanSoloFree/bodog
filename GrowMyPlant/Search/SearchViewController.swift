@@ -18,7 +18,8 @@ class SearchViewController: UIViewController {
     
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
-        guard let popoverViewController = storyboard?.instantiateViewController(withIdentifier: "SearchPopoverViewController") as? SearchPopoverViewController else { return }
+        let identifier = String(describing: SearchPopoverViewController.self)
+        guard let popoverViewController = storyboard?.instantiateViewController(withIdentifier: identifier) as? SearchPopoverViewController else { return }
         popoverViewController.modalPresentationStyle = .overFullScreen
         present(popoverViewController, animated: true)
     }

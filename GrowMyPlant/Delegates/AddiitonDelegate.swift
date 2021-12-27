@@ -1,3 +1,3 @@
 protocol AdditionDelegate {
-    func present(additionViewController: AdditionViewController)
+    func present(_ additionViewController: AdditionViewController)
 }
