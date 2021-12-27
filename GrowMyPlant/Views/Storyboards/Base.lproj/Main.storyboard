@@ -98,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-fJ-nce">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-fJ-nce">
                                 <rect key="frame" x="12" y="44" width="176" height="106"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -346,31 +346,31 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2u-kP-Fy9">
-                                        <rect key="frame" x="305" y="38.5" width="18.5" height="17"/>
-                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
+                                        <rect key="frame" x="284.5" y="38.5" width="59" height="14"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amb-xX-wMC">
-                                        <rect key="frame" x="286.5" y="59.5" width="55" height="18.5"/>
+                                        <rect key="frame" x="286.5" y="56.5" width="55" height="18.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vt-uJ-nWA">
-                                        <rect key="frame" x="305" y="82" width="18.5" height="17"/>
+                                        <rect key="frame" x="305" y="79" width="18.5" height="17"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsh-yL-jA7">
-                                        <rect key="frame" x="284.5" y="107" width="59" height="18.5"/>
+                                        <rect key="frame" x="284.5" y="104" width="59" height="18.5"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBR-Sb-ONz">
-                                        <rect key="frame" x="305" y="129.5" width="18.5" height="17"/>
+                                        <rect key="frame" x="305" y="126.5" width="18.5" height="17"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -461,6 +461,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Ug2-PH-0tY" secondAttribute="trailing" constant="24" id="b7g-qo-vA9"/>
                                     <constraint firstItem="SZd-qg-P8l" firstAttribute="top" secondItem="PfD-IR-vrt" secondAttribute="top" constant="8" id="bfc-dV-NiA"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Q3y-2E-HxG" secondAttribute="trailing" id="f9r-Hw-bOC"/>
+                                    <constraint firstItem="d2u-kP-Fy9" firstAttribute="width" secondItem="PfD-IR-vrt" secondAttribute="width" multiplier="0.161202" id="fmo-UO-WLs"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="C2v-Ss-Vww" secondAttribute="trailing" id="hkJ-cJ-7RA"/>
                                     <constraint firstItem="S3O-DG-cFc" firstAttribute="top" secondItem="Q3y-2E-HxG" secondAttribute="bottom" constant="8" id="lBm-WM-mTZ"/>
                                     <constraint firstItem="U3T-7X-p9V" firstAttribute="top" secondItem="S3O-DG-cFc" secondAttribute="bottom" constant="4" id="mUc-3I-Wz7"/>
@@ -508,7 +509,6 @@
                         <outlet property="breedLabel" destination="yO1-SZ-df9" id="WZf-eh-oBq"/>
                         <outlet property="containerView" destination="PfD-IR-vrt" id="GaB-uX-BJ2"/>
                         <outlet property="dogImageView" destination="SZd-qg-P8l" id="hui-wS-VS1"/>
-                        <outlet property="heightLabel" destination="d2u-kP-Fy9" id="G3C-SZ-ZKS"/>
                         <outlet property="lifeSpanLabel" destination="d2u-kP-Fy9" id="iLn-oY-v28"/>
                         <outlet property="temperamentLabel" destination="C2v-Ss-Vww" id="VFF-BO-oKF"/>
                         <outlet property="topGestureZone" destination="HJ2-jd-h6Y" id="OJ6-Ax-Rr4"/>

@@ -3,7 +3,16 @@ import UIKit
 class SearchPopoverViewController: UIViewController {
     
     var list: [List] = [List]()
-    var filteredList:[List] = [List]()
+    var filteredList:[List] = [List]() {
+        didSet {
+            if !(filteredList.isEmpty) {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+            } else {
+                noInfo()
+            }
+        }
+    }
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -17,7 +26,7 @@ class SearchPopoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getData()
+        checkInternetConnection()
         let cellName = String(describing: SearchCollectionViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
         
@@ -30,23 +39,29 @@ class SearchPopoverViewController: UIViewController {
         backButton.layer.cornerRadius = 5
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkIfLoaded()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        checkInternetConnection()
+//    }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
     
-    func checkIfLoaded() {
+    func noInfo() {
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
         
-        if self.list.isEmpty && self.filteredList.isEmpty {
-            self.sadDogImageView.isHidden = false
-            self.noInformationLabel.text = "No information were loaded :(\nCheck you'r internet connection, or try to reload."
-            self.noInformationLabel.isHidden = false
+        self.sadDogImageView.isHidden = false
+        self.noInformationLabel.text = "No information were loaded :(\nCheck you'r internet connection, or try to reload."
+        self.noInformationLabel.isHidden = false
+    }
+    
+    func checkInternetConnection() {
+        if !(Connectivity.isConnectedToInternet) {
+            noInfo()
+        } else {
+            getData()
         }
     }
     
@@ -56,7 +71,6 @@ class SearchPopoverViewController: UIViewController {
                 self.filteredList = list
                 self.list = list
                 self.collectionView.reloadData()
-                self.checkIfLoaded()
             }
         }
     }

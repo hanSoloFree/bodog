@@ -24,3 +24,12 @@ struct NetworkManager {
         }
     }
 }
+
+struct Connectivity {
+    
+  static let shared = NetworkReachabilityManager()!
+    
+  static var isConnectedToInternet:Bool {
+      return self.shared.isReachable
+    }
+}

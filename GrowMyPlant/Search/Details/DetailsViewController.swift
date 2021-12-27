@@ -8,7 +8,6 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var lifeSpanLabel: UILabel!
-    @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var temperamentLabel: UILabel!
@@ -78,10 +77,6 @@ class DetailsViewController: UIViewController {
     
         if let lifeSpan = details.lifeSpan {
             lifeSpanLabel.text = lifeSpan
-        }
-        
-        if let height = details.height?.metric {
-            heightLabel.text = height + "cm"
         }
         
         if let weight = details.weight?.metric {
