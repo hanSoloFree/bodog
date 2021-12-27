@@ -2,9 +2,9 @@ import UIKit
 
 class GardenViewController: UIViewController, RemoveCellDelegate {
     
-    var dogs: [SavedDog]?
+    private var dogs: [SavedDog]?
     
-    var documentsUrl: URL {
+    private var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
@@ -28,12 +28,12 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
     }
     
     
-    func loadData() {
+    private func loadData() {
         self.dogs = DataManager.shared.get()
         self.collectionView.reloadData()
     }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         let cellName = String(describing: DogCollectionViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
@@ -48,7 +48,7 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
         present(alert, animated: true)
     }
     
-    func placeholder(hide: Bool) {
+    private func placeholder(hide: Bool) {
         self.stackView.isHidden = hide
         self.dogsLabel.isHidden = hide
         self.sadDogImageView.isHidden = hide

@@ -45,7 +45,7 @@ class CreateReminderViewController: UIViewController {
         }
     }
     
-    @objc func selectDogTapped() {
+    @objc private func selectDogTapped() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let identifier = String(describing: DogSelectorTableViewController.self)
         guard let dogSelectorViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? DogSelectorTableViewController else { return }
@@ -63,15 +63,15 @@ class CreateReminderViewController: UIViewController {
         self.present(dogSelectorViewController, animated: true)
     }
     
-    @objc func tappedTop()  {
+    @objc private func tappedTop()  {
         dismissWithAnimation()
     }
     
-    @objc func tappedBottom()  {
+    @objc private func tappedBottom()  {
         dismissWithAnimation()
     }
     
-    func requestAuthorization() {
+    private func requestAuthorization() {
         NotificationManager.shared.requestAuthorization { granted in
             if !granted {
                 self.pushSettingsAlert()
@@ -79,7 +79,7 @@ class CreateReminderViewController: UIViewController {
         }
     }
     
-    func pushSettingsAlert() {
+    private func pushSettingsAlert() {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: "Enable notifications!", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
             
@@ -101,7 +101,7 @@ class CreateReminderViewController: UIViewController {
         }
     }
     
-    func dismissWithAnimation() {
+    private func dismissWithAnimation() {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
@@ -109,13 +109,13 @@ class CreateReminderViewController: UIViewController {
         }
     }
     
-    func setCornerRadiuses() {
+    private func setCornerRadiuses() {
         self.containerView.layer.cornerRadius = 20
         self.cancelButton.layer.cornerRadius = 10
         self.addButton.layer.cornerRadius = 10
     }
     
-    func setupGestures() {
+    private func setupGestures() {
         let selectGesture = UITapGestureRecognizer(target: self, action: #selector(selectDogTapped))
         selectGesture.numberOfTapsRequired = 1
         self.selectedDogLabel.isUserInteractionEnabled = true

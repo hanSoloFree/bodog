@@ -1,9 +1,7 @@
 import UIKit
 
 class TabBarController : UITabBarController, UITabBarControllerDelegate {
-    
-    private var homeButtonWidth: CGFloat = 80
-    
+        
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -20,15 +18,18 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         self.selectedIndex = 1
     }
     
-    @objc func showFact() {
+    @objc private func showFact() {
         let randomFactViewController = createFactViewController()
-        
-        randomFactViewController.showFact = true
-        
-        self.present(randomFactViewController, animated: true)
+                
+        NetworkManager.shared.requestFact { fact in
+            randomFactViewController.text = fact
+            self.present(randomFactViewController, animated: true)
+        }
     }
     
     private func setupHomeButton() {
+        let homeButtonWidth: CGFloat = 80
+        
         let homeButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2) - (homeButtonWidth / 2), y: -20, width: homeButtonWidth, height: homeButtonWidth))
         homeButton.setBackgroundImage(UIImage(named: "dog"), for: .normal)
 
@@ -47,7 +48,7 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         self.view.layoutIfNeeded()
     }
     
-    func createFactViewController() -> RandomFactViewController {
+    private func createFactViewController() -> RandomFactViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let identifier = String(describing: RandomFactViewController.self)
         guard let randomFactViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? RandomFactViewController else { return RandomFactViewController() }
@@ -59,14 +60,15 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate {
         
         popOverViewContoller?.sourceView = self.view
         popOverViewContoller?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.maxY - 100, width: 0, height: 0)
-        
+        randomFactViewController.preferredContentSize = CGSize(width: 180, height: 120)
         return randomFactViewController
     }
     
-    func showHint() {
+    private func showHint() {
         let deadline = DispatchTime.now() + Double.random(in: 2...5)
         DispatchQueue.main.asyncAfter(deadline: deadline) {
             let randomFactViewController = self.createFactViewController()
+            randomFactViewController.showFact = false
             self.present(randomFactViewController, animated: true)
         }
     }

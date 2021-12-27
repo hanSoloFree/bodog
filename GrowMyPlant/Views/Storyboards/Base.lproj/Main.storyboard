@@ -94,24 +94,26 @@
         <scene sceneID="Nq6-MR-SZP">
             <objects>
                 <viewController storyboardIdentifier="RandomFactViewController" id="d6f-kq-Mz1" customClass="RandomFactViewController" customModule="GrowMyPlant" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R4k-R6-2RM">
+                    <view key="view" contentMode="scaleAspectFill" id="R4k-R6-2RM">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-fJ-nce">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-fJ-nce">
                                 <rect key="frame" x="12" y="44" width="176" height="106"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ahx-Ak-HRm"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="GsA-fJ-nce" firstAttribute="top" secondItem="ahx-Ak-HRm" secondAttribute="top" id="4W5-10-tyl"/>
-                            <constraint firstItem="ahx-Ak-HRm" firstAttribute="trailing" secondItem="GsA-fJ-nce" secondAttribute="trailing" constant="12" id="UQC-Ww-S8S"/>
-                            <constraint firstItem="ahx-Ak-HRm" firstAttribute="bottom" secondItem="GsA-fJ-nce" secondAttribute="bottom" id="ea6-oJ-IV5"/>
-                            <constraint firstItem="GsA-fJ-nce" firstAttribute="leading" secondItem="ahx-Ak-HRm" secondAttribute="leading" constant="12" id="v98-4q-gZW"/>
+                            <constraint firstItem="GsA-fJ-nce" firstAttribute="centerX" secondItem="R4k-R6-2RM" secondAttribute="centerX" id="9Bh-tN-KtO"/>
+                            <constraint firstItem="GsA-fJ-nce" firstAttribute="leading" secondItem="R4k-R6-2RM" secondAttribute="leading" constant="12" id="In2-te-eLQ"/>
+                            <constraint firstItem="ahx-Ak-HRm" firstAttribute="bottom" secondItem="GsA-fJ-nce" secondAttribute="bottom" id="MIX-j4-8nt"/>
+                            <constraint firstItem="GsA-fJ-nce" firstAttribute="top" secondItem="ahx-Ak-HRm" secondAttribute="top" id="QtT-fI-cgK"/>
+                            <constraint firstAttribute="trailing" secondItem="GsA-fJ-nce" secondAttribute="trailing" constant="12" id="ZEF-G4-fJ3"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="200" height="150"/>

@@ -51,7 +51,7 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    @objc func tappedTop() {
+    @objc private func tappedTop() {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
@@ -59,7 +59,7 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    @objc func tappedBottom() {
+    @objc private func tappedBottom() {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
@@ -68,7 +68,7 @@ class DetailsViewController: UIViewController {
     }
     
     
-    func setupDetails() {
+    private func setupDetails() {
         guard let details = details else { return }
 
         if let dogImageURL  = details.image?.url {
@@ -100,7 +100,7 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    func setupGesture() {
+    private func setupGesture() {
         let topGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTop))
         topGesture.numberOfTapsRequired = 1
         self.topGestureZone.isUserInteractionEnabled = true

@@ -2,27 +2,30 @@ import UIKit
 
 class RandomFactViewController: UIViewController {
     
-    var showFact: Bool = false
+    var text: String?
+    var showFact: Bool = true
     
-    @IBOutlet weak var label: UILabel! {
-        didSet {
-            self.preferredContentSize = CGSize(width: self.label.bounds.width,
-                                               height: self.label.bounds.height)
-        }
-    }
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setup()
+        self.label.adjustsFontSizeToFitWidth = true
+        self.label.minimumScaleFactor = 0.8
+    }
+    
+    private func setup() {
         if showFact {
-            NetworkManager.shared.requestFact { fact in
-                self.label.text = fact
-            }
+            self.label.text = text
         } else {
-            self.label.font = UIFont(name: "Courier New Bold", size: 18)
-            self.label.textAlignment = .center
             self.label.text = "Double tap to see a random fact!"
+            self.label.font = UIFont(name: "Courier New Bold", size: 20)
+            self.label.textAlignment = .center
         }
     }
 }

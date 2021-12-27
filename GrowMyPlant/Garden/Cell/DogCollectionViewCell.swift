@@ -5,7 +5,7 @@ class DogCollectionViewCell: UICollectionViewCell {
     var removeDelegate: RemoveCellDelegate?
     var object: SavedDog?
     
-    var documentsUrl: URL {
+    private var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
@@ -110,7 +110,7 @@ class DogCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    @objc func remove() {
+    @objc private func remove() {
         guard let object = object else { return }
         removeDelegate?.reloadData(completion: {
             DataManager.shared.deleteSelected(object: object)

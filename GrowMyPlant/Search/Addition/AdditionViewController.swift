@@ -7,10 +7,10 @@ class AdditionViewController: UIViewController {
     var defaultImage: UIImage?
     var defaultBreed: String?
     
-    var selectedImage: UIImage?
-    var newImageSet: Bool = false
+    private var selectedImage: UIImage?
+    private var newImageSet: Bool = false
     
-    var documentsUrl: URL {
+    private var documentsUrl: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
     
@@ -102,7 +102,7 @@ class AdditionViewController: UIViewController {
         }
     }
 
-    @objc func setDefaultImage() {
+    @objc private func setDefaultImage() {
         if let defaultImage = defaultImage {
             self.dogImageView.image = defaultImage
             self.dogImageFrameView.backgroundColor = .white
@@ -111,7 +111,7 @@ class AdditionViewController: UIViewController {
         }
     }
     
-    @objc func setImage() {
+    @objc private func setImage() {
         var config = PHPickerConfiguration(photoLibrary: .shared())
         config.selectionLimit = 1
         config.filter = .images
@@ -122,15 +122,15 @@ class AdditionViewController: UIViewController {
         present(photoPickerViewController, animated: true)
     }
     
-    @objc func tappedTop()  {
+    @objc private func tappedTop()  {
         dismissWithAnimation()
     }
     
-    @objc func tappedBottom()  {
+    @objc private func tappedBottom()  {
         dismissWithAnimation()
     }
     
-    func dismissWithAnimation() {
+    private func dismissWithAnimation() {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
@@ -151,7 +151,7 @@ class AdditionViewController: UIViewController {
     }
     
     
-    func setupDefaults() {
+    private func setupDefaults() {
         if let breed = self.defaultBreed {
             self.breedLabel.text = breed
         }
@@ -161,7 +161,7 @@ class AdditionViewController: UIViewController {
         setupGestures()
     }
     
-    func setupGestures() {
+    private func setupGestures() {
         let setDefaultImageTapGesture = UITapGestureRecognizer(target: self, action: #selector(setDefaultImage))
         self.setDefaultPhotoLabel.isUserInteractionEnabled = true
         self.setDefaultPhotoLabel.addGestureRecognizer(setDefaultImageTapGesture)
@@ -182,7 +182,7 @@ class AdditionViewController: UIViewController {
         self.bottomGestureZone.addGestureRecognizer(bottomGesture)
     }
     
-    func setCornerRadiuses() {
+    private func setCornerRadiuses() {
         self.containerView.layer.cornerRadius = 20
         
         self.dogImageFrameView.layer.cornerRadius = dogImageFrameView.frame.width / 2

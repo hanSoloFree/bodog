@@ -2,7 +2,7 @@ import UIKit
 
 class PendingRemindersViewController: UIViewController {
     
-    var reminders: [UNNotificationContent] = [UNNotificationContent]()
+    private var reminders: [UNNotificationContent] = [UNNotificationContent]()
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -30,7 +30,7 @@ class PendingRemindersViewController: UIViewController {
         self.containerView.layer.cornerRadius = 20
     }
     
-    @objc func tappedTop() {
+    @objc private func tappedTop() {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
@@ -38,7 +38,7 @@ class PendingRemindersViewController: UIViewController {
         }
     }
     
-    @objc func tappedBottom() {
+    @objc private func tappedBottom() {
         UIView.animate(withDuration: 0.15) {
             self.view.backgroundColor = .clear
         } completion: { _ in
@@ -46,7 +46,7 @@ class PendingRemindersViewController: UIViewController {
         }
     }
     
-    func getPendingReminders() {
+    private func getPendingReminders() {
         NotificationManager.shared.getPendingNotifications { contents in
             self.reminders = contents
             
@@ -64,12 +64,12 @@ class PendingRemindersViewController: UIViewController {
         }
     }
     
-    func showSadDog(_ bool: Bool) {
+    private func showSadDog(_ bool: Bool) {
         self.sadDogImageView.isHidden = !bool
         self.noRemindersLabel.isHidden = !bool
     }
     
-    func setupGesture() {
+    private func setupGesture() {
         let topGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTop))
         topGesture.numberOfTapsRequired = 1
         self.topGestureZone.isUserInteractionEnabled = true

@@ -2,7 +2,6 @@ import UIKit
 
 class RemindersViewController: UIViewController {
     
-    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var pendingButton: UIButton!
     
@@ -49,7 +48,7 @@ class RemindersViewController: UIViewController {
     }
     
     
-    func setCornerRadiuses() {
+    private func setCornerRadiuses() {
         self.addButton.layer.cornerRadius = 10
         self.pendingButton.layer.cornerRadius = 10
     }

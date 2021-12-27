@@ -2,8 +2,8 @@ import UIKit
 
 class SearchPopoverViewController: UIViewController {
     
-    var list: [List] = [List]()
-    var filteredList:[List] = [List]()
+    private var list: [List] = [List]()
+    private var filteredList:[List] = [List]()
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,14 +31,14 @@ class SearchPopoverViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    func configureCollectionView() {
+    private func configureCollectionView() {
         let cellName = String(describing: SearchCollectionViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
         
         collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
     }
     
-    func infoIs(loaded: Bool) {
+    private func infoIs(loaded: Bool) {
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
         
@@ -47,7 +47,7 @@ class SearchPopoverViewController: UIViewController {
         self.noInformationLabel.isHidden = loaded
     }
     
-    func checkInternetConnection() {
+    private func checkInternetConnection() {
         if !(NetworkManager.isConnectedToInternet) {
             infoIs(loaded: false)
         } else {
@@ -55,7 +55,7 @@ class SearchPopoverViewController: UIViewController {
         }
     }
     
-    func getData() {
+    private func getData() {
         if self.list.isEmpty {
             NetworkManager.shared.requestListOfBreeds { list in
                 self.filteredList = list
