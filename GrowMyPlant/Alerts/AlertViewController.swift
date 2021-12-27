@@ -15,14 +15,15 @@ class AlertViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        let deadline = DispatchTime.now() + 1
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) { self.dismiss(animated: true) {
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            self.dismiss(animated: true) {
                 guard self.text != "Cleaned!" else { return }
                 self.savingDelegate?.dismiss()
             }
         }
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

@@ -4,6 +4,11 @@ import Alamofire
 struct NetworkManager {
     
     static let shared = NetworkManager()
+    static let internet = NetworkReachabilityManager()!
+          
+    static var isConnectedToInternet:Bool {
+        return self.internet.isReachable
+      }
     
     func requestListOfBreeds(completion: @escaping(([List]) -> ())) {
         
@@ -22,14 +27,5 @@ struct NetworkManager {
             guard let fact = value.facts?.first else { return }
             completion(fact)
         }
-    }
-}
-
-struct Connectivity {
-    
-  static let shared = NetworkReachabilityManager()!
-    
-  static var isConnectedToInternet:Bool {
-      return self.shared.isReachable
     }
 }

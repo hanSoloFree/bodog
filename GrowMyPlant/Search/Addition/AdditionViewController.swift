@@ -230,6 +230,4 @@ extension AdditionViewController: SavingDelegate {
         self.view.backgroundColor = .black.withAlphaComponent(0)
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }

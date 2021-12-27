@@ -3,16 +3,7 @@ import UIKit
 class SearchPopoverViewController: UIViewController {
     
     var list: [List] = [List]()
-    var filteredList:[List] = [List]() {
-        didSet {
-            if !(filteredList.isEmpty) {
-                self.activityIndicator.isHidden = true
-                self.activityIndicator.stopAnimating()
-            } else {
-                noInfo()
-            }
-        }
-    }
+    var filteredList:[List] = [List]()
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,12 +16,9 @@ class SearchPopoverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        checkInternetConnection()
-        let cellName = String(describing: SearchCollectionViewCell.self)
-        let cellNib = UINib(nibName: cellName, bundle: nil)
         
-        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
+        checkInternetConnection()
+        configureCollectionView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,27 +27,29 @@ class SearchPopoverViewController: UIViewController {
         backButton.layer.cornerRadius = 5
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        checkInternetConnection()
-//    }
-    
     @IBAction func backButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
     
-    func noInfo() {
+    func configureCollectionView() {
+        let cellName = String(describing: SearchCollectionViewCell.self)
+        let cellNib = UINib(nibName: cellName, bundle: nil)
+        
+        collectionView.register(cellNib, forCellWithReuseIdentifier: cellName)
+    }
+    
+    func infoIs(loaded: Bool) {
         self.activityIndicator.isHidden = true
         self.activityIndicator.stopAnimating()
         
-        self.sadDogImageView.isHidden = false
+        self.sadDogImageView.isHidden = loaded
         self.noInformationLabel.text = "No information were loaded :(\nCheck you'r internet connection, or try to reload."
-        self.noInformationLabel.isHidden = false
+        self.noInformationLabel.isHidden = loaded
     }
     
     func checkInternetConnection() {
-        if !(Connectivity.isConnectedToInternet) {
-            noInfo()
+        if !(NetworkManager.isConnectedToInternet) {
+            infoIs(loaded: false)
         } else {
             getData()
         }
@@ -70,6 +60,9 @@ class SearchPopoverViewController: UIViewController {
             NetworkManager.shared.requestListOfBreeds { list in
                 self.filteredList = list
                 self.list = list
+                if !(self.list.isEmpty) {
+                    self.infoIs(loaded: true)
+                }
                 self.collectionView.reloadData()
             }
         }

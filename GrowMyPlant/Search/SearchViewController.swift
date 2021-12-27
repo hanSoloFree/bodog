@@ -1,12 +1,12 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-        
+    
     @IBOutlet weak var searchButton: UIButton!
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-              
+        
         extendedLayoutIncludesOpaqueBars = true
         setupNavBar()
     }
@@ -28,10 +28,10 @@ class SearchViewController: UIViewController {
         navigationItem.title = "Find you'r dog"
         self.view.backgroundColor = .systemGray2
         let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-
+        navBarAppearance.configureWithOpaqueBackground()
+        
         let font = UIFont(name: "Copperplate Bold", size: 40) ?? UIFont.systemFont(ofSize: 40)
-
+        
         navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : CustomColors.darkRed, NSAttributedString.Key.font : font]
         navBarAppearance.backgroundColor = CustomColors.darkGray
         navigationController?.navigationBar.standardAppearance = navBarAppearance
