@@ -17,12 +17,9 @@ class PendingRemindersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        getPendingReminders()
         setupGesture()
-        
-        NotificationManager.shared.getPendingNotifications { contents in
-            self.reminders = contents
-        }
-        
         let cellName = String(describing: ReminderTableViewCell.self)
         let cellNib = UINib(nibName: cellName, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: cellName)
@@ -33,16 +30,8 @@ class PendingRemindersViewController: UIViewController {
         self.containerView.layer.cornerRadius = 20
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        checkIfEmpty()
-        self.activityIndicator.isHidden = true
-        self.activityIndicator.stopAnimating()
-    }
-    
     @objc func tappedTop() {
         UIView.animate(withDuration: 0.15) {
-            self.checkIfEmpty()
             self.view.backgroundColor = .clear
         } completion: { _ in
             self.dismiss(animated: true)
@@ -57,13 +46,27 @@ class PendingRemindersViewController: UIViewController {
         }
     }
     
-    func checkIfEmpty() {
-        if reminders.isEmpty {
-            self.sadDogImageView.isHidden = false
-            self.noRemindersLabel.isHidden = false
-        } else {
-            self.swipeLabel.isHidden = false
+    func getPendingReminders() {
+        NotificationManager.shared.getPendingNotifications { contents in
+            self.reminders = contents
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.isHidden = true
+                self.activityIndicator.stopAnimating()
+                
+                if self.reminders.isEmpty {
+                    self.showSadDog(true)
+                } else {
+                    self.swipeLabel.isHidden = false
+                    self.tableView.isHidden = false
+                }
+            }
         }
+    }
+    
+    func showSadDog(_ bool: Bool) {
+        self.sadDogImageView.isHidden = !bool
+        self.noRemindersLabel.isHidden = !bool
     }
     
     func setupGesture() {
@@ -116,7 +119,8 @@ extension PendingRemindersViewController: UITableViewDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }
-    
-        checkIfEmpty()
+        if reminders.isEmpty {
+            showSadDog(true)
+        }
     }
 }
