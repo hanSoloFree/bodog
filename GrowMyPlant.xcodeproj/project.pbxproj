@@ -46,7 +46,7 @@
 		7E2F94FC2743DF6200A6B710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F94FA2743DF6200A6B710 /* Main.storyboard */; };
 		7E2F94FE2743DF6500A6B710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F94FD2743DF6500A6B710 /* Assets.xcassets */; };
 		7E2F95012743DF6500A6B710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E2F94FF2743DF6500A6B710 /* LaunchScreen.storyboard */; };
-		7E2F95092744DF8800A6B710 /* GardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F95082744DF8800A6B710 /* GardenViewController.swift */; };
+		7E2F95092744DF8800A6B710 /* DogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F95082744DF8800A6B710 /* DogsViewController.swift */; };
 		7E2F950B2744E44B00A6B710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F950A2744E44B00A6B710 /* SceneDelegate.swift */; };
 		7E2F950F2744E70700A6B710 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F950E2744E70700A6B710 /* CustomColors.swift */; };
 		7E2F95152744F2A700A6B710 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2F95142744F2A700A6B710 /* TabBarController.swift */; };
@@ -96,7 +96,7 @@
 		7E2F94FD2743DF6500A6B710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E2F95002743DF6500A6B710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E2F95022743DF6500A6B710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E2F95082744DF8800A6B710 /* GardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenViewController.swift; sourceTree = "<group>"; };
+		7E2F95082744DF8800A6B710 /* DogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsViewController.swift; sourceTree = "<group>"; };
 		7E2F950A2744E44B00A6B710 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7E2F950E2744E70700A6B710 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		7E2F95142744F2A700A6B710 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 				7EEB9DDF2750EA66000134B1 /* Main */,
 				048FF67A2775FAE500956EA8 /* RandomFact */,
 				7E2F952E274BA86100A6B710 /* Reminders */,
-				7E2F950C2744E6DB00A6B710 /* Garden */,
+				7E2F950C2744E6DB00A6B710 /* Dogs */,
 				7E2F952927478A3F00A6B710 /* Search */,
 				7E2F950D2744E6E400A6B710 /* Helpers */,
 				0416EBB02771EF3500811973 /* Managers */,
@@ -301,13 +301,13 @@
 			path = GrowMyPlant;
 			sourceTree = "<group>";
 		};
-		7E2F950C2744E6DB00A6B710 /* Garden */ = {
+		7E2F950C2744E6DB00A6B710 /* Dogs */ = {
 			isa = PBXGroup;
 			children = (
-				7E2F95082744DF8800A6B710 /* GardenViewController.swift */,
+				7E2F95082744DF8800A6B710 /* DogsViewController.swift */,
 				049CFCFA277322A800768DFE /* Cell */,
 			);
-			path = Garden;
+			path = Dogs;
 			sourceTree = "<group>";
 		};
 		7E2F950D2744E6E400A6B710 /* Helpers */ = {
@@ -521,7 +521,7 @@
 				049CFD032773527C00768DFE /* DataManager.swift in Sources */,
 				049CFD122773A3EC00768DFE /* RemoveAlertViewController.swift in Sources */,
 				049FFAE32774947A00E6BC13 /* CreateReminderViewController.swift in Sources */,
-				7E2F95092744DF8800A6B710 /* GardenViewController.swift in Sources */,
+				7E2F95092744DF8800A6B710 /* DogsViewController.swift in Sources */,
 				048FF6832776045E00956EA8 /* Fact.swift in Sources */,
 				049CFD0E27739C0700768DFE /* AlertViewController.swift in Sources */,
 				7E2F950B2744E44B00A6B710 /* SceneDelegate.swift in Sources */,

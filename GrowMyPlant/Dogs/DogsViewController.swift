@@ -1,6 +1,6 @@
 import UIKit
 
-class GardenViewController: UIViewController, RemoveCellDelegate {
+class DogsViewController: UIViewController, RemoveCellDelegate {
     
     private var dogs: [SavedDog]?
     
@@ -75,7 +75,7 @@ class GardenViewController: UIViewController, RemoveCellDelegate {
 }
 
 
-extension GardenViewController: UICollectionViewDataSource {
+extension DogsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let count = dogs?.count else { return 0 }
         if count > 0 {
@@ -101,7 +101,7 @@ extension GardenViewController: UICollectionViewDataSource {
     }
 }
 
-extension GardenViewController: UICollectionViewDelegateFlowLayout {
+extension DogsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         

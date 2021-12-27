@@ -6,7 +6,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let mainVC = GardenViewController()
+        let mainVC = DogsViewController()
         let navVC = CustomNavigationController(rootViewController: mainVC)
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
