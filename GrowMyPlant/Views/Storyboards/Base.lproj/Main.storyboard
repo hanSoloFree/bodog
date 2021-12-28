@@ -60,12 +60,12 @@
                                 </connections>
                             </collectionView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi1-xF-9Hh">
-                                <rect key="frame" x="88" y="543" width="238" height="47.5"/>
+                                <rect key="frame" x="88" y="531" width="238" height="47.5"/>
                                 <color key="backgroundColor" red="0.80392156859999997" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Search">
+                                <state key="normal" title="Add first">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -84,7 +84,7 @@
                             <constraint firstItem="BWf-YZ-aeo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-56" id="DmI-OS-nA2"/>
                             <constraint firstItem="Pi1-xF-9Hh" firstAttribute="width" secondItem="Pi1-xF-9Hh" secondAttribute="height" multiplier="5:1" id="HKP-Gh-0cx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi1-xF-9Hh" secondAttribute="trailing" constant="88" id="I5s-gd-nMI"/>
-                            <constraint firstItem="Pi1-xF-9Hh" firstAttribute="top" secondItem="2Uh-Sx-Och" secondAttribute="bottom" constant="36" id="IGG-RV-zno"/>
+                            <constraint firstItem="Pi1-xF-9Hh" firstAttribute="top" secondItem="2Uh-Sx-Och" secondAttribute="bottom" constant="24" id="IGG-RV-zno"/>
                             <constraint firstItem="wVk-N6-EEf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JG0-N7-qyu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wVk-N6-EEf" secondAttribute="bottom" constant="8" id="JVt-DK-1Z4"/>
                             <constraint firstItem="bTF-kW-fOw" firstAttribute="leading" secondItem="iJi-LI-DyP" secondAttribute="trailing" constant="-72" id="bVU-Ml-6ft"/>
@@ -231,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6Q-Xt-8Fa">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="806.5"/>
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="806.5"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-6x-45s">
                                         <rect key="frame" x="188.5" y="385" width="37" height="37"/>
@@ -324,9 +324,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4ax-3V-6Hm" firstAttribute="trailing" secondItem="o6Q-Xt-8Fa" secondAttribute="trailing" id="0ck-dL-EnB"/>
+                            <constraint firstAttribute="bottom" secondItem="o6Q-Xt-8Fa" secondAttribute="bottom" id="70d-Wv-y0c"/>
                             <constraint firstItem="o6Q-Xt-8Fa" firstAttribute="leading" secondItem="4ax-3V-6Hm" secondAttribute="leading" id="k0L-bq-ww8"/>
                             <constraint firstItem="o6Q-Xt-8Fa" firstAttribute="height" secondItem="RD7-cM-S3N" secondAttribute="height" multiplier="0.9" id="oaN-Se-UWJ"/>
-                            <constraint firstItem="4ax-3V-6Hm" firstAttribute="bottom" secondItem="o6Q-Xt-8Fa" secondAttribute="bottom" id="orh-DI-3IM"/>
                         </constraints>
                     </view>
                     <connections>
@@ -656,7 +656,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You'r pending reminders:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-ad-GNV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your pending reminders:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-ad-GNV">
                                         <rect key="frame" x="24" y="32" width="318" height="29"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
