@@ -17,17 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loaderBg" translatesAutoresizingMaskIntoConstraints="NO" id="wGp-8M-sxn">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="loader" translatesAutoresizingMaskIntoConstraints="NO" id="lKu-PZ-uEh">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="wGp-8M-sxn" secondAttribute="bottom" id="0hZ-7b-9fg"/>
-                            <constraint firstItem="wGp-8M-sxn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="JIe-R2-cZi"/>
-                            <constraint firstItem="wGp-8M-sxn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dt5-nE-o4t"/>
-                            <constraint firstItem="wGp-8M-sxn" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="eg6-lX-Iit"/>
+                            <constraint firstItem="lKu-PZ-uEh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="7dh-Nd-3wR"/>
+                            <constraint firstItem="lKu-PZ-uEh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9Es-Ue-U5W"/>
+                            <constraint firstAttribute="bottom" secondItem="lKu-PZ-uEh" secondAttribute="bottom" id="FyY-Zi-IpF"/>
+                            <constraint firstAttribute="trailing" secondItem="lKu-PZ-uEh" secondAttribute="trailing" id="cHU-lX-NsW"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="loaderBg" width="1125" height="2436"/>
+        <image name="loader" width="562.5" height="1218"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
