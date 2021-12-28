@@ -12,6 +12,7 @@ class DogsViewController: UIViewController, RemoveCellDelegate {
     @IBOutlet weak var dogsLabel: UILabel!
     @IBOutlet weak var sadDogImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -27,6 +28,14 @@ class DogsViewController: UIViewController, RemoveCellDelegate {
         loadData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.searchButton.layer.cornerRadius = 10
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 0
+    }
     
     private func loadData() {
         self.dogs = DataManager.shared.get()
@@ -52,6 +61,7 @@ class DogsViewController: UIViewController, RemoveCellDelegate {
         self.stackView.isHidden = hide
         self.dogsLabel.isHidden = hide
         self.sadDogImageView.isHidden = hide
+        self.searchButton.isHidden = hide
     }
     
     private func setupNavBar() {

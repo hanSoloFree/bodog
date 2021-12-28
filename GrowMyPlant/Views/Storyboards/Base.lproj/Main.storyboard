@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadDog" translatesAutoresizingMaskIntoConstraints="NO" id="BWf-YZ-aeo">
-                                <rect key="frame" x="136" y="345" width="142" height="142"/>
+                                <rect key="frame" x="136" y="321" width="142" height="142"/>
                             </imageView>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Uh-Sx-Och">
-                                <rect key="frame" x="105.5" y="487" width="203" height="28"/>
+                                <rect key="frame" x="105.5" y="479" width="203" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGE-o2-qYl">
                                         <rect key="frame" x="0.0" y="5" width="96.5" height="23"/>
@@ -38,7 +38,7 @@
                                 </subviews>
                             </stackView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dogs :(" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-kW-fOw">
-                                <rect key="frame" x="236.5" y="492" width="84.5" height="23"/>
+                                <rect key="frame" x="236.5" y="484" width="84.5" height="23"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -59,6 +59,20 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="KKu-Vu-lh9"/>
                                 </connections>
                             </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi1-xF-9Hh">
+                                <rect key="frame" x="88" y="543" width="238" height="47.5"/>
+                                <color key="backgroundColor" red="0.80392156859999997" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U4d-r5-DYd"/>
+                                    <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="iJ0-2u-g69"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,14 +81,18 @@
                             <constraint firstItem="BWf-YZ-aeo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0fj-CJ-YMr"/>
                             <constraint firstItem="BWf-YZ-aeo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="136" id="5Wm-Xz-64Z"/>
                             <constraint firstAttribute="trailing" secondItem="BWf-YZ-aeo" secondAttribute="trailing" constant="136" id="BGI-KK-NeV"/>
-                            <constraint firstItem="BWf-YZ-aeo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-32" id="DmI-OS-nA2"/>
+                            <constraint firstItem="BWf-YZ-aeo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-56" id="DmI-OS-nA2"/>
+                            <constraint firstItem="Pi1-xF-9Hh" firstAttribute="width" secondItem="Pi1-xF-9Hh" secondAttribute="height" multiplier="5:1" id="HKP-Gh-0cx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi1-xF-9Hh" secondAttribute="trailing" constant="88" id="I5s-gd-nMI"/>
+                            <constraint firstItem="Pi1-xF-9Hh" firstAttribute="top" secondItem="2Uh-Sx-Och" secondAttribute="bottom" constant="36" id="IGG-RV-zno"/>
                             <constraint firstItem="wVk-N6-EEf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JG0-N7-qyu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wVk-N6-EEf" secondAttribute="bottom" constant="8" id="JVt-DK-1Z4"/>
                             <constraint firstItem="bTF-kW-fOw" firstAttribute="leading" secondItem="iJi-LI-DyP" secondAttribute="trailing" constant="-72" id="bVU-Ml-6ft"/>
                             <constraint firstItem="2Uh-Sx-Och" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bx3-GU-2KC"/>
-                            <constraint firstItem="2Uh-Sx-Och" firstAttribute="top" secondItem="BWf-YZ-aeo" secondAttribute="bottom" id="epP-yy-cB4"/>
+                            <constraint firstItem="2Uh-Sx-Och" firstAttribute="top" secondItem="BWf-YZ-aeo" secondAttribute="bottom" constant="16" id="epP-yy-cB4"/>
                             <constraint firstItem="BWf-YZ-aeo" firstAttribute="width" secondItem="BWf-YZ-aeo" secondAttribute="height" id="mY8-Gt-uy6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wVk-N6-EEf" secondAttribute="trailing" id="ofP-F1-LWr"/>
+                            <constraint firstItem="Pi1-xF-9Hh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="ycI-k5-fz6"/>
                             <constraint firstItem="bTF-kW-fOw" firstAttribute="centerY" secondItem="KGE-o2-qYl" secondAttribute="centerY" id="yuj-oM-NdV"/>
                         </constraints>
                     </view>
@@ -83,6 +101,7 @@
                         <outlet property="collectionView" destination="wVk-N6-EEf" id="Ott-QE-VxS"/>
                         <outlet property="dogsLabel" destination="bTF-kW-fOw" id="i6I-I3-Ynm"/>
                         <outlet property="sadDogImageView" destination="BWf-YZ-aeo" id="Quz-OA-7v2"/>
+                        <outlet property="searchButton" destination="Pi1-xF-9Hh" id="jKO-Aw-YNW"/>
                         <outlet property="stackView" destination="2Uh-Sx-Och" id="5gX-zM-O9S"/>
                     </connections>
                 </viewController>
@@ -135,31 +154,31 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YT-sL-rwG">
                                 <rect key="frame" x="80" y="422.5" width="254" height="51"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" red="0.80392156859999997" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4YT-sL-rwG" secondAttribute="height" multiplier="5:1" id="MXv-M1-jrg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
-                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Search">
-                                    <color key="titleColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="JeN-WS-GzJ" eventType="touchUpInside" id="CXi-p7-JCq"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yR1-ii-6VD">
-                                <rect key="frame" x="50" y="386.5" width="251" height="28"/>
+                                <rect key="frame" x="64" y="374.5" width="232" height="28"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find you'r" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-Wk-PoT">
-                                        <rect key="frame" x="0.0" y="5" width="120.5" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find your" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hk-Wk-PoT">
+                                        <rect key="frame" x="0.0" y="5" width="111" height="23"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BELOVED" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sS7-Ow-TTg">
-                                        <rect key="frame" x="130.5" y="0.0" width="120.5" height="28"/>
+                                        <rect key="frame" x="121" y="0.0" width="111" height="28"/>
                                         <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -167,13 +186,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dog" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ete-fL-zQL">
-                                <rect key="frame" x="309" y="391.5" width="36.5" height="23"/>
+                                <rect key="frame" x="304" y="379.5" width="36.5" height="23"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search by breed or sub-breed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pm-vv-2Ht">
-                                <rect key="frame" x="80" y="481.5" width="254" height="17"/>
+                                <rect key="frame" x="80" y="489.5" width="254" height="17"/>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -183,13 +202,13 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4YT-sL-rwG" firstAttribute="centerY" secondItem="W46-XB-IYr" secondAttribute="centerY" id="A1h-Mk-ldA"/>
-                            <constraint firstItem="1Pm-vv-2Ht" firstAttribute="top" secondItem="4YT-sL-rwG" secondAttribute="bottom" constant="8" id="BD4-FG-eem"/>
+                            <constraint firstItem="1Pm-vv-2Ht" firstAttribute="top" secondItem="4YT-sL-rwG" secondAttribute="bottom" constant="16" id="BD4-FG-eem"/>
                             <constraint firstItem="Uj8-YP-lFV" firstAttribute="trailing" secondItem="1Pm-vv-2Ht" secondAttribute="trailing" constant="80" id="E1h-rF-cvW"/>
-                            <constraint firstItem="yR1-ii-6VD" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="50" id="OdO-us-DNc"/>
+                            <constraint firstItem="yR1-ii-6VD" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="64" id="OdO-us-DNc"/>
                             <constraint firstItem="Uj8-YP-lFV" firstAttribute="trailing" secondItem="4YT-sL-rwG" secondAttribute="trailing" constant="80" id="Twt-2E-d15"/>
                             <constraint firstItem="4YT-sL-rwG" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="80" id="Y9O-Zr-jTQ"/>
                             <constraint firstItem="1Pm-vv-2Ht" firstAttribute="leading" secondItem="Uj8-YP-lFV" secondAttribute="leading" constant="80" id="Yqc-u9-NTD"/>
-                            <constraint firstItem="4YT-sL-rwG" firstAttribute="top" secondItem="yR1-ii-6VD" secondAttribute="bottom" constant="8" id="cRU-oH-1wA"/>
+                            <constraint firstItem="4YT-sL-rwG" firstAttribute="top" secondItem="yR1-ii-6VD" secondAttribute="bottom" constant="20" id="cRU-oH-1wA"/>
                             <constraint firstItem="ete-fL-zQL" firstAttribute="leading" secondItem="sS7-Ow-TTg" secondAttribute="trailing" constant="8" id="loX-D2-nOR"/>
                             <constraint firstItem="ete-fL-zQL" firstAttribute="centerY" secondItem="1hk-Wk-PoT" secondAttribute="centerY" id="tOD-Uv-y3z"/>
                         </constraints>
@@ -534,12 +553,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfK-Fi-QWt">
                                         <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Pending">
-                                            <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="pendingButtonPressed:" destination="hQY-WH-fUD" eventType="touchUpInside" id="GUs-Or-pCA"/>
@@ -547,12 +566,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc5-Db-SB1">
                                         <rect key="frame" x="191" y="0.0" width="159" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="backgroundColor" red="0.80392156859999997" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="24"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Create new">
-                                            <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="addButtonPressed:" destination="hQY-WH-fUD" eventType="touchUpInside" id="F5B-uW-FZq"/>
@@ -569,20 +588,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU'R" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhA-2j-Bn4">
-                                <rect key="frame" x="143.5" y="374.5" width="90.5" height="32.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhA-2j-Bn4">
+                                <rect key="frame" x="143.5" y="374.5" width="82.5" height="32.5"/>
                                 <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reminders!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCd-iJ-hxr">
-                                <rect key="frame" x="242" y="382" width="132.5" height="25"/>
+                                <rect key="frame" x="234" y="382" width="132.5" height="25"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check pending, or create new" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onc-hc-rIw">
-                                <rect key="frame" x="56" y="489" width="302.5" height="20.5"/>
+                                <rect key="frame" x="56" y="493" width="302.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -598,7 +617,7 @@
                             <constraint firstItem="fYf-EB-IxH" firstAttribute="centerY" secondItem="mww-vn-RxD" secondAttribute="centerY" id="KvP-QC-1Ia"/>
                             <constraint firstItem="ehJ-WQ-Wju" firstAttribute="leading" secondItem="yMT-XN-QQl" secondAttribute="leading" constant="56" id="QVf-lY-Xbo"/>
                             <constraint firstItem="fYf-EB-IxH" firstAttribute="top" secondItem="ehJ-WQ-Wju" secondAttribute="bottom" constant="16" id="dSn-rq-UaY"/>
-                            <constraint firstItem="onc-hc-rIw" firstAttribute="top" secondItem="fYf-EB-IxH" secondAttribute="bottom" constant="16" id="l6D-sR-xEq"/>
+                            <constraint firstItem="onc-hc-rIw" firstAttribute="top" secondItem="fYf-EB-IxH" secondAttribute="bottom" constant="20" id="l6D-sR-xEq"/>
                             <constraint firstItem="fYf-EB-IxH" firstAttribute="top" secondItem="rhA-2j-Bn4" secondAttribute="bottom" constant="16" id="lnb-Eu-0wC"/>
                             <constraint firstItem="fYf-EB-IxH" firstAttribute="leading" secondItem="yMT-XN-QQl" secondAttribute="leading" constant="32" id="uBu-Qg-Qgu"/>
                             <constraint firstItem="sCd-iJ-hxr" firstAttribute="leading" secondItem="rhA-2j-Bn4" secondAttribute="trailing" constant="8" id="zgB-Xj-zqK"/>
@@ -1258,9 +1277,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
