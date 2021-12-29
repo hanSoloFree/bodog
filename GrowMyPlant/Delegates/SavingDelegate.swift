@@ -1,3 +1,0 @@
-protocol SavingDelegate {
-    func dismiss()
-}
